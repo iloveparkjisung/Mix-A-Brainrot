@@ -8,7 +8,7 @@ height = 1.4
 radius = 0.55
 height = 1.4
 
-[node name="Egg" type="CharacterBody3D" unique_id=2080548456]
+[node name="Egg" type="RigidBody3D" unique_id=1099142899]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=75147374]
 mesh = SubResource("CapsuleMesh_mb28y")
@@ -17,3 +17,5 @@ mesh = SubResource("CapsuleMesh_mb28y")
 shape = SubResource("CapsuleShape3D_7gxl2")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1742043761]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1336026866]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://csyeuya4ogeov"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hh6m0"]
+
+[node name="Conveyor" type="Node3D" unique_id=611286918]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=74668514]
+mesh = SubResource("BoxMesh_hh6m0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=337358000]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=828040775]
