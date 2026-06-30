@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://csyeuya4ogeov"]
 
 [ext_resource type="Script" uid="uid://dt26bbdcxtkus" path="res://assetScript/conveyor.gd" id="1_v14vx"]
+[ext_resource type="PackedScene" uid="uid://demlrywygh0vh" path="res://assetFile/egg.tscn" id="2_n6es6"]
 
 [sub_resource type="Curve3D" id="Curve3D_v14vx"]
 closed = true
@@ -19,6 +20,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="Conveyor" type="Node3D" unique_id=611286918]
 script = ExtResource("1_v14vx")
+egg_scene = ExtResource("2_n6es6")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1656890804]
 unique_name_in_owner = true

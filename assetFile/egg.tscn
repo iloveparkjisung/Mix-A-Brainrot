@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://demlrywygh0vh"]
 
-[ext_resource type="Script" uid="uid://deocbwputnr1k" path="res://assetFile/egg.gd" id="1_q2qr6"]
+[ext_resource type="Script" uid="uid://deocbwputnr1k" path="res://assetScript/egg.gd" id="1_q2qr6"]
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_ovh17"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mb28y"]
@@ -13,7 +13,6 @@ height = 1.4
 
 [node name="Egg" type="PathFollow3D" unique_id=716302297]
 script = ExtResource("1_q2qr6")
-speed = null
 
 [node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833]
 script = ExtResource("2_ovh17")
