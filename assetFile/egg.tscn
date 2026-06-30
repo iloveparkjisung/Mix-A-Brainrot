@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://demlrywygh0vh"]
 
+[ext_resource type="Script" uid="uid://deocbwputnr1k" path="res://assetFile/egg.gd" id="1_q2qr6"]
+[ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_ovh17"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_mb28y"]
 radius = 0.55
 height = 1.4
@@ -8,14 +11,19 @@ height = 1.4
 radius = 0.55
 height = 1.4
 
-[node name="Egg" type="RigidBody3D" unique_id=1099142899]
+[node name="Egg" type="PathFollow3D" unique_id=716302297]
+script = ExtResource("1_q2qr6")
+speed = null
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=75147374]
+[node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833]
+script = ExtResource("2_ovh17")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
 mesh = SubResource("CapsuleMesh_mb28y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=375105250]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody" unique_id=375105250]
 shape = SubResource("CapsuleShape3D_7gxl2")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1742043761]
+[node name="Area3D" type="Area3D" parent="EggBody" unique_id=1742043761]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1336026866]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody/Area3D" unique_id=1336026866]
