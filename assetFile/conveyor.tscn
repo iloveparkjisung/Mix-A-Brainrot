@@ -1,18 +1,28 @@
 [gd_scene format=3 uid="uid://csyeuya4ogeov"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh6m0"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_hh6m0"]
+[ext_resource type="Script" uid="uid://dt26bbdcxtkus" path="res://assetScript/conveyor.gd" id="1_v14vx"]
 
 [sub_resource type="Curve3D" id="Curve3D_v14vx"]
+closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.02383055, -0.0012378693, -5.0370445, 0, 0, 0, 0, 0, 0, 0.03104689, 0.0012807846, 5.041088),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh6m0"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hh6m0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v14vx"]
+
 [node name="Conveyor" type="Node3D" unique_id=611286918]
+script = ExtResource("1_v14vx")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1656890804]
+unique_name_in_owner = true
+curve = SubResource("Curve3D_v14vx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=74668514]
 transform = Transform3D(2, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 0, 0)
@@ -22,15 +32,5 @@ mesh = SubResource("BoxMesh_hh6m0")
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=337358000]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=828040775]
-
-[node name="SpawnPoint" type="Marker3D" parent="." unique_id=1748854935]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-
-[node name="EndPoint" type="Marker3D" parent="." unique_id=428945465]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-
-[node name="Path3D" type="Path3D" parent="." unique_id=1656890804]
-curve = SubResource("Curve3D_v14vx")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1456465231]
-transform = Transform3D(-0.9999995, -1.7896794e-07, -0.00071612163, -7.1054252e-15, 0.9999998, -0.0002499126, 0.00071612175, -0.0002499126, -0.9999994, 0.02383055, -0.0012378693, -5.0370445)
+transform = Transform3D(2, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_v14vx")
