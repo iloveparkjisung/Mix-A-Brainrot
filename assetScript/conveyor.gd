@@ -1,6 +1,6 @@
 extends Node3D
-@export var speed := 2.0
-@export var spawn_delay := 2.0
+@export var speed := 0.5
+@export var spawn_delay := 1
 @export var egg_scene: PackedScene
 @onready var path: Path3D = $Path3D
 func _process(delta) -> void:
@@ -18,5 +18,5 @@ func spawn_loop():
 
 func spawn_egg():
 	var egg = egg_scene.instantiate()
-	egg.progress_ratio = 0.0
 	path.add_child(egg)
+	egg.progress_ratio = 0.0

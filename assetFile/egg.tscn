@@ -12,9 +12,11 @@ radius = 0.55
 height = 1.4
 
 [node name="Egg" type="PathFollow3D" unique_id=716302297]
+loop = false
 script = ExtResource("1_q2qr6")
 
 [node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833]
+unique_name_in_owner = true
 script = ExtResource("2_ovh17")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
