@@ -8,7 +8,7 @@
 [sub_resource type="Curve3D" id="Curve3D_v14vx"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.024, 0.001, -5, 0, 0, 0, 0, 0, 0, 0.031, 0.001, 5),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.024, 0.001, -20, 0, 0, 0, 0, 0, 0, 0.031, 0.001, 20),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -22,6 +22,10 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n6es6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxcty"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dojes"]
+
 [node name="Conveyor" type="Node3D" unique_id=611286918]
 script = ExtResource("1_v14vx")
 egg_scene = ExtResource("2_n6es6")
@@ -32,35 +36,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 curve = SubResource("Curve3D_v14vx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=74668514]
-transform = Transform3D(2, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 0.25, 0, 0, 0, 40, 0, 0, 0)
 material_overlay = SubResource("StandardMaterial3D_hh6m0")
 mesh = SubResource("BoxMesh_hh6m0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=337358000]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=828040775]
-transform = Transform3D(2, 0, 0, 0, 0.25, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 0.25, 0, 0, 0, 40, 0, 0, 0)
 shape = SubResource("BoxShape3D_v14vx")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1785776143]
-transform = Transform3D(-0.008342598, -0.5516267, 0.83404946, 1.8344437e-09, 0.8340786, 0.55164593, -0.9999653, 0.0046021603, -0.006958388, 3.2123241, 2.2353115, -0.14674473)
+[node name="ConveyorAccessories" type="Node3D" parent="." unique_id=717590158]
 
-[node name="ConveyorMachine" type="MeshInstance3D" parent="." unique_id=740921232]
-transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.75, 5.25)
+[node name="ConveyorMachine" type="MeshInstance3D" parent="ConveyorAccessories" unique_id=740921232]
+transform = Transform3D(3.75, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.75, 20)
 material_override = ExtResource("3_yxcty")
 mesh = SubResource("BoxMesh_n6es6")
 
-[node name="ConveyorMachineSmall" type="MeshInstance3D" parent="." unique_id=447128116]
-transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.75, 5)
+[node name="StaticBody3D" type="StaticBody3D" parent="ConveyorAccessories/ConveyorMachine" unique_id=1959339824]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConveyorAccessories/ConveyorMachine/StaticBody3D" unique_id=919307463]
+shape = SubResource("BoxShape3D_yxcty")
+
+[node name="ConveyorMachineSmall" type="MeshInstance3D" parent="ConveyorAccessories" unique_id=447128116]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.75, 19.75)
 material_override = ExtResource("4_dojes")
 mesh = SubResource("BoxMesh_n6es6")
 
-[node name="ConveyorMachine2" type="MeshInstance3D" parent="." unique_id=787416882]
-transform = Transform3D(2.5, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.75, -5)
+[node name="ConveyorMachine2" type="MeshInstance3D" parent="ConveyorAccessories" unique_id=787416882]
+transform = Transform3D(3.75, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.75, -20)
 material_override = ExtResource("3_yxcty")
 mesh = SubResource("BoxMesh_n6es6")
 
-[node name="ConveyorMachineSmall2" type="MeshInstance3D" parent="." unique_id=117722819]
-transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.75, -4.75)
+[node name="StaticBody3D" type="StaticBody3D" parent="ConveyorAccessories/ConveyorMachine2" unique_id=609054949]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConveyorAccessories/ConveyorMachine2/StaticBody3D" unique_id=1843346912]
+shape = SubResource("BoxShape3D_dojes")
+
+[node name="ConveyorMachineSmall2" type="MeshInstance3D" parent="ConveyorAccessories" unique_id=117722819]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.75, -19.75)
 material_override = ExtResource("4_dojes")
 mesh = SubResource("BoxMesh_n6es6")
