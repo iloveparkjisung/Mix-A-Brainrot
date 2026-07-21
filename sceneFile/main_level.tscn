@@ -1,3 +1,67 @@
 [gd_scene format=3 uid="uid://b1hl2smofmehg"]
 
+[ext_resource type="Material" uid="uid://clof8uoayxhdy" path="res://materialFile/grasscolor.tres" id="1_1l0xj"]
+[ext_resource type="PackedScene" uid="uid://d3xn2txuo4o4y" path="res://assetFile/base.tscn" id="2_1yw2o"]
+[ext_resource type="PackedScene" uid="uid://csyeuya4ogeov" path="res://assetFile/conveyor.tscn" id="3_48twx"]
+[ext_resource type="PackedScene" uid="uid://b1wtuk3owhbke" path="res://assetFile/player.tscn" id="4_dedje"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_48twx"]
+sky_top_color = Color(7.893444e-06, 0.68014985, 0.89671224, 1)
+sky_horizon_color = Color(0.41276017, 0.6982351, 0.821554, 1)
+ground_bottom_color = Color(0.5041869, 0.65764713, 0.7138415, 1)
+
+[sub_resource type="Sky" id="Sky_dedje"]
+sky_material = SubResource("ProceduralSkyMaterial_48twx")
+
+[sub_resource type="Environment" id="Environment_shl88"]
+background_mode = 2
+background_color = Color(2.3102762e-06, 0.79365194, 0.9068249, 1)
+sky = SubResource("Sky_dedje")
+ambient_light_source = 1
+ambient_light_color = Color(0.44705883, 1, 1, 1)
+reflected_light_source = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1yw2o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dedje"]
+size = Vector3(2, 0.001, 2)
+
 [node name="mainLevel" type="Node3D" unique_id=1367555869]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=193417636]
+environment = SubResource("Environment_shl88")
+
+[node name="GrassBase" type="MeshInstance3D" parent="." unique_id=1644570430]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+material_override = ExtResource("1_1l0xj")
+mesh = SubResource("PlaneMesh_1yw2o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassBase" unique_id=1453389962]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassBase/StaticBody3D" unique_id=1154037645]
+shape = SubResource("BoxShape3D_dedje")
+
+[node name="Base" parent="." unique_id=1041749909 instance=ExtResource("2_1yw2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.2, 10)
+
+[node name="Conveyor" parent="." unique_id=611286918 instance=ExtResource("3_48twx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=379787863]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 17.831602, 0)
+light_color = Color(0.9978232, 0.99999994, 0.8845336, 1)
+shadow_enabled = true
+shadow_blur = 5.0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=439210492]
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 10.44, 35)
+light_color = Color(0.9978232, 0.99999994, 0.8845336, 1)
+shadow_blur = 5.0
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="." unique_id=1060222045]
+transform = Transform3D(1, 0, 0, 0, -0.5735764, 0.8191519, 0, -0.8191519, -0.5735764, 0, 10.44, -35)
+light_color = Color(0.9978232, 0.99999994, 0.8845336, 1)
+shadow_blur = 5.0
+
+[node name="Player" parent="." unique_id=1853437809 instance=ExtResource("4_dedje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5840397, 0)
