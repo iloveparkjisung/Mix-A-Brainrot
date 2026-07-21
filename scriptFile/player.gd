@@ -54,6 +54,7 @@ func pick_up(object):
 		
 	held_object = object
 	object.freeze = true
+	object.get_node("CollisionShape3D").disabled = true
 	object.reparent(hold_point)
 	
 	object.position = Vector3.ZERO
