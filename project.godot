@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mix-A-Brainrot GameFile"
-run/main_scene="uid://b1hl2smofmehg"
+run/main_scene="uid://c7alf6jegur3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
