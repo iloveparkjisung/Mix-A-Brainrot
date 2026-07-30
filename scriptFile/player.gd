@@ -24,8 +24,21 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		if ray.is_colliding():
 			var object = ray.get_collider()
-			if object.has_method("interact"):
-				object.interact()
+			
+			print("hit:", object.name)
+			
+			if held_object == null:
+				if object.has_method("interact"):
+					object.interact()
+				
+			else:
+				print("holding")
+				if object.is_in_group("hatching_platform"):
+					print("found")
+					var platform = object.get_parent()
+					if platform.place_egg(held_object):
+						print("placed")
+						held_object = null
 	
 	# Add the gravity.
 	if not is_on_floor():
