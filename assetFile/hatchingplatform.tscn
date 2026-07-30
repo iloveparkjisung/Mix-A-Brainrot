@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://i2mkvarvyav4"]
+
+[ext_resource type="Script" uid="uid://cognab7aauv3b" path="res://assetScript/hatchingplatform.gd" id="1_e0785"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtcqn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_avgxc"]
+
+[node name="HatchingPlatform" type="Node3D" unique_id=1442503796]
+script = ExtResource("1_e0785")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1133893445 groups=["hatching_platform"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=61934410]
+transform = Transform3D(1.505, 0, 0, 0, 0.25, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_gtcqn")
+
+[node name="BrainrotHolder" type="MeshInstance3D" parent="StaticBody3D" unique_id=1599378761]
+transform = Transform3D(1.5, 0, 0, 0, 0.25, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_avgxc")
+
+[node name="EggPoint" type="Marker3D" parent="." unique_id=1900290015]
+transform = Transform3D(1.045, 0, 0, 0, 1.045, 0, 0, 0, 1.045, 0, 0.75, 0)
+gizmo_extents = 1.0

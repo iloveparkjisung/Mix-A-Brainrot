@@ -6,7 +6,6 @@ func _ready() -> void:
 
 
 func interact():
-	print("egg")
 	
 	var player = get_tree().get_first_node_in_group("player")
 	
