@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c7alf6jegur3"]
 
+[ext_resource type="Script" uid="uid://dw33rwc1c2jc4" path="res://scriptFile/main_menu.gd" id="1_12w02"]
 [ext_resource type="Texture2D" uid="uid://ck7o1y3b27nwx" path="res://importFiles/MenuPicture_GeminiGenerated.png" id="1_bv6ch"]
 [ext_resource type="FontFile" uid="uid://bjonh3e0joaw7" path="res://importFiles/new_super_mario_font_u/New Super Mario Font U.ttf" id="2_k5png"]
 
@@ -11,26 +12,35 @@
 
 [node name="MainMenu" type="Control" unique_id=1803834581]
 layout_mode = 3
-anchor_right = 1.194
-anchor_bottom = 1.1850001
-offset_right = 0.5119629
-offset_bottom = 2.119934
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_12w02")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1993362023]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_bv6ch")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=791120621]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 250.0
-offset_top = 150.0
-offset_right = -226.0
-offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bv6ch")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=791120621]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -442.5
+offset_top = -221.5
+offset_right = 442.5
+offset_bottom = 221.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -78,3 +88,5 @@ theme_override_fonts/font = ExtResource("2_k5png")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_woja8")
 text = "quit game"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
