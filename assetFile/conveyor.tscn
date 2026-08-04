@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://csyeuya4ogeov"]
 
 [ext_resource type="Script" uid="uid://dt26bbdcxtkus" path="res://assetScript/conveyor.gd" id="1_v14vx"]
-[ext_resource type="PackedScene" uid="uid://demlrywygh0vh" path="res://assetFile/egg.tscn" id="2_n6es6"]
+[ext_resource type="PackedScene" uid="uid://demlrywygh0vh" path="res://assetFile/eggScene/common_egg.tscn" id="2_wpy7t"]
+[ext_resource type="PackedScene" uid="uid://dgtplqgmjf1ya" path="res://assetFile/eggScene/uncommon_egg.tscn" id="3_xetxy"]
 [ext_resource type="Material" uid="uid://bydp52pe0rro3" path="res://materialFile/darkpinkmetalic.tres" id="3_yxcty"]
+[ext_resource type="PackedScene" uid="uid://c65bdj6h0yc5w" path="res://assetFile/eggScene/rare_egg.tscn" id="4_amr6o"]
 [ext_resource type="Material" uid="uid://u3jiq0m4eiai" path="res://materialFile/pinkmetalic.tres" id="4_dojes"]
+[ext_resource type="PackedScene" uid="uid://dli83iq3yf266" path="res://assetFile/eggScene/epic_egg.tscn" id="5_jq1eu"]
+[ext_resource type="PackedScene" uid="uid://bcgum7dg6jmpb" path="res://assetFile/eggScene/legendary_egg.tscn" id="6_3ireq"]
 
 [sub_resource type="Curve3D" id="Curve3D_v14vx"]
 closed = true
@@ -28,7 +32,11 @@ albedo_color = Color(0, 0, 0, 1)
 
 [node name="Conveyor" type="Node3D" unique_id=611286918]
 script = ExtResource("1_v14vx")
-egg_scene = ExtResource("2_n6es6")
+common_egg = ExtResource("2_wpy7t")
+uncommon_egg = ExtResource("3_xetxy")
+rare_egg = ExtResource("4_amr6o")
+epic_egg = ExtResource("5_jq1eu")
+legendary_egg = ExtResource("6_3ireq")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1656890804]
 unique_name_in_owner = true
