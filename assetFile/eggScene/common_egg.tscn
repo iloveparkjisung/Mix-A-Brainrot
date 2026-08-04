@@ -29,15 +29,15 @@ brainrot5 = ExtResource("6_0ufdh")
 unique_name_in_owner = true
 script = ExtResource("2_8qb1s")
 
-[node name="HatchTimer" type="Timer" parent="EggBody" unique_id=339521243]
-wait_time = 10.0
-one_shot = true
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
 mesh = SubResource("CapsuleMesh_mb28y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody" unique_id=375105250]
 shape = SubResource("CapsuleShape3D_7gxl2")
+
+[node name="HatchTimer" type="Timer" parent="EggBody" unique_id=339521243]
+wait_time = 3.0
+one_shot = true
 
 [node name="Area3D" type="Area3D" parent="EggBody" unique_id=1742043761]
 
