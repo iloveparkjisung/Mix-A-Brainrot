@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://demlrywygh0vh"]
+
+[ext_resource type="Script" uid="uid://deocbwputnr1k" path="res://assetScript/commonegg.gd" id="1_hd0tp"]
+[ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_8qb1s"]
+[ext_resource type="PackedScene" uid="uid://blaejdqantwfj" path="res://assetFile/brainrotCharacters/SkySeaSimp.tscn" id="2_xud4h"]
+[ext_resource type="PackedScene" uid="uid://6d0eftvwr6tt" path="res://assetFile/brainrotCharacters/RainyBlossomBro.tscn" id="3_0ufdh"]
+[ext_resource type="PackedScene" uid="uid://ca0p2q7xtmhve" path="res://assetFile/brainrotCharacters/WhisperWindSpirit.tscn" id="4_lfhfb"]
+[ext_resource type="PackedScene" uid="uid://barttpwokllqp" path="res://assetFile/brainrotCharacters/VoidStarBoy.tscn" id="5_n2qft"]
+[ext_resource type="PackedScene" uid="uid://dh8gol4s83ugc" path="res://assetFile/brainrotCharacters/WaveCat-erpillar.tscn" id="6_0ufdh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mb28y"]
+radius = 0.55
+height = 1.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7gxl2"]
+radius = 0.55
+height = 1.4
+
+[node name="CommonEgg" type="PathFollow3D" unique_id=716302297]
+loop = false
+script = ExtResource("1_hd0tp")
+brainrot1 = ExtResource("2_xud4h")
+brainrot2 = ExtResource("3_0ufdh")
+brainrot3 = ExtResource("4_lfhfb")
+brainrot4 = ExtResource("5_n2qft")
+brainrot5 = ExtResource("6_0ufdh")
+
+[node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833]
+unique_name_in_owner = true
+script = ExtResource("2_8qb1s")
+
+[node name="HatchTimer" type="Timer" parent="EggBody" unique_id=339521243]
+wait_time = 10.0
+one_shot = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
+mesh = SubResource("CapsuleMesh_mb28y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody" unique_id=375105250]
+shape = SubResource("CapsuleShape3D_7gxl2")
+
+[node name="Area3D" type="Area3D" parent="EggBody" unique_id=1742043761]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody/Area3D" unique_id=1336026866]
+
+[connection signal="timeout" from="EggBody/HatchTimer" to="." method="_on_hatch_timer_timeout"]
