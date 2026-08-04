@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://babu7xwabegg3"]
+
+[ext_resource type="Texture2D" uid="uid://7qjsn1dtxer4" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Flow State Goblin.png" id="1_rfrph"]
+
+[node name="FlowStateGoblin" type="Node3D" unique_id=322714563]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
+texture = ExtResource("1_rfrph")
