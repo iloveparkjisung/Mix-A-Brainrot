@@ -1,4 +1,5 @@
 extends PathFollow3D
+@onready var egg_body = %EggBody
 @export var speed := 2.0
 @export var brainrot1: PackedScene
 @export var brainrot2: PackedScene
@@ -32,14 +33,18 @@ func choose_brainrot():
 		return brainrot5
 		
 func hatch():
+	
 	var chosen_brainrot = choose_brainrot()
+	print("chosen_brainrot")
 	var new_brainrot = chosen_brainrot.instantiate()
+	print("created")
 	get_tree().current_scene.add_child(new_brainrot)
-	var hatch_point = get_parent().get_node("HatchPoint")
-	new_brainrot.global_position = hatch_point.global_position
+	new_brainrot.global_position = global_position
+	print("removed")
+	egg_body.queue_free()
 	queue_free()
 	
 
 
 func _on_hatch_timer_timeout() -> void:
-	print("hatched")
+	hatch()
