@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://c65bdj6h0yc5w"]
 
-[ext_resource type="Script" uid="uid://deocbwputnr1k" path="res://assetScript/commonegg.gd" id="1_aha71"]
+[ext_resource type="Script" uid="uid://dt0ep2imsdng3" path="res://assetScript/rareegg.gd" id="1_aha71"]
+[ext_resource type="PackedScene" uid="uid://d4etbn7dos8wg" path="res://assetFile/brainrotCharacters/Sanall.tscn" id="2_0m7hs"]
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_pik7c"]
+[ext_resource type="PackedScene" uid="uid://hn8yrhyh2qfc" path="res://assetFile/brainrotCharacters/Bakbakbay.tscn" id="3_1yci5"]
+[ext_resource type="PackedScene" uid="uid://bhhu7nnbvcrn7" path="res://assetFile/brainrotCharacters/Pasubear.tscn" id="4_3faqv"]
+[ext_resource type="PackedScene" uid="uid://biaqeo3bh1fim" path="res://assetFile/brainrotCharacters/Aliwal.tscn" id="5_obq63"]
+[ext_resource type="PackedScene" uid="uid://005ken4oe0c5" path="res://assetFile/brainrotCharacters/Champelaran.tscn" id="6_iyncw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jiljm"]
 albedo_color = Color(0.033112995, 0.4917413, 0.9999998, 1)
@@ -17,6 +22,11 @@ height = 1.4
 [node name="RareEgg" type="PathFollow3D" unique_id=716302297]
 loop = false
 script = ExtResource("1_aha71")
+brainrot1 = ExtResource("2_0m7hs")
+brainrot2 = ExtResource("3_1yci5")
+brainrot3 = ExtResource("4_3faqv")
+brainrot4 = ExtResource("5_obq63")
+brainrot5 = ExtResource("6_iyncw")
 
 [node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833]
 unique_name_in_owner = true
@@ -29,6 +39,12 @@ mesh = SubResource("CapsuleMesh_mb28y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody" unique_id=375105250]
 shape = SubResource("CapsuleShape3D_7gxl2")
 
+[node name="HatchTimer" type="Timer" parent="EggBody" unique_id=879657784]
+wait_time = 15.0
+one_shot = true
+
 [node name="Area3D" type="Area3D" parent="EggBody" unique_id=1742043761]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody/Area3D" unique_id=1336026866]
+
+[connection signal="timeout" from="EggBody/HatchTimer" to="." method="_on_hatch_timer_timeout"]

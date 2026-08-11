@@ -44,3 +44,4 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody/Area3D" unique_id=1336026866]
 
 [connection signal="timeout" from="EggBody/HatchTimer" to="." method="_on_hatch_timer_timeout"]
+[connection signal="timeout" from="EggBody/HatchTimer" to="EggBody" method="_on_hatch_timer_timeout"]

@@ -83,37 +83,37 @@ mesh = SubResource("BoxMesh_8qhyp")
 shape = SubResource("BoxShape3D_trkkb")
 
 [node name="HatchingPlatform" parent="." unique_id=1442503796 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.3, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.25, -5)
 
-[node name="HatchingPlatform2" parent="." unique_id=1814736939 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.3, -5)
+[node name="HatchingPlatform2" parent="." unique_id=260243006 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.25, -5)
 
-[node name="HatchingPlatform3" parent="." unique_id=516888409 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.3, -5)
+[node name="HatchingPlatform3" parent="." unique_id=948646637 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.25, -5)
 
-[node name="HatchingPlatform4" parent="." unique_id=616564848 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.3, -5)
+[node name="HatchingPlatform4" parent="." unique_id=947623976 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, -5)
 
-[node name="HatchingPlatform5" parent="." unique_id=1716044765 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.3, -5)
+[node name="HatchingPlatform5" parent="." unique_id=1515012775 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.25, -5)
 
-[node name="HatchingPlatform6" parent="." unique_id=1297591558 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.3, -5)
+[node name="HatchingPlatform6" parent="." unique_id=1383064950 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, -5)
 
-[node name="HatchingPlatform7" parent="." unique_id=1805756328 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.3, 5)
+[node name="HatchingPlatform7" parent="." unique_id=813379699 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5, 0.25, 5.0000005)
 
-[node name="HatchingPlatform8" parent="." unique_id=2039702855 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.3, 5)
+[node name="HatchingPlatform8" parent="." unique_id=2031036284 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3, 0.25, 5.0000005)
 
-[node name="HatchingPlatform9" parent="." unique_id=158341401 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.3, 5)
+[node name="HatchingPlatform9" parent="." unique_id=1245403478 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0.25, 5)
 
-[node name="HatchingPlatform10" parent="." unique_id=1243529946 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.3, 5)
+[node name="HatchingPlatform10" parent="." unique_id=202273785 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0.25, 5)
 
-[node name="HatchingPlatform11" parent="." unique_id=1651011213 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.3, 5)
+[node name="HatchingPlatform11" parent="." unique_id=1998675660 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3, 0.25, 4.9999995)
 
-[node name="HatchingPlatform12" parent="." unique_id=1882012325 instance=ExtResource("3_0nvb6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.3, 5)
+[node name="HatchingPlatform12" parent="." unique_id=1239116380 instance=ExtResource("3_0nvb6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 0.25, 4.9999995)

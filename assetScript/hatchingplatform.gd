@@ -6,6 +6,11 @@ func place_egg(new_egg):
 	if egg != null:
 		return false
 	
+	print("placed",name)
+	
+	var egg_path = egg.get_parent()
+	egg_path.is_hatching = true
+	
 	egg = new_egg
 	egg.reparent(self)
 	
@@ -17,3 +22,7 @@ func place_egg(new_egg):
 	egg.start_hatching()
 	
 	return true
+	
+func clear_egg():
+	egg = null
+	print("clear",name)
