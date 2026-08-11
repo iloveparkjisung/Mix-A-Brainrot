@@ -12,6 +12,8 @@ func place_egg(new_egg):
 	egg.global_position = egg_point.global_position
 	egg.global_rotation = egg_point.global_rotation
 	
+	egg.set_hatching_platform(self)
+	print("hatching on",name)
 	egg.start_hatching()
 	
 	return true
