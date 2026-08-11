@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c6vx8d3bouhy7"]
+
+[ext_resource type="Texture2D" uid="uid://cdov838kdq4w1" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Walang Cati.png" id="1_207gd"]
+
+[node name="Walang Cati" type="Node3D" unique_id=322714563]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+texture = ExtResource("1_207gd")

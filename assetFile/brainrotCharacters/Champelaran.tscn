@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://005ken4oe0c5"]
+
+[ext_resource type="Texture2D" uid="uid://bq3m3q60bu6hk" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Champelaran.png" id="1_1267o"]
+
+[node name="Champelaran" type="Node3D" unique_id=322714563]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+texture = ExtResource("1_1267o")

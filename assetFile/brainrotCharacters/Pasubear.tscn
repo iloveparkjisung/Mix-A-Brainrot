@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bhhu7nnbvcrn7"]
+
+[ext_resource type="Texture2D" uid="uid://8ra4xdrgvpsa" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Pasubear.png" id="1_78igk"]
+
+[node name="Pasubear" type="Node3D" unique_id=322714563]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+texture = ExtResource("1_78igk")

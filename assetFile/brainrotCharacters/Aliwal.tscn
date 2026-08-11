@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://biaqeo3bh1fim"]
+
+[ext_resource type="Texture2D" uid="uid://bh8aavd30a4gm" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Aliwal.png" id="1_up31j"]
+
+[node name="Aliwal" type="Node3D" unique_id=322714563]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+texture = ExtResource("1_up31j")

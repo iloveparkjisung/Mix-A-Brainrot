@@ -5,4 +5,5 @@
 [node name="WhisperWindSpirit" type="Node3D" unique_id=322714563]
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 texture = ExtResource("1_ox5v7")
