@@ -27,6 +27,10 @@ brainrot2 = ExtResource("3_5pkhw")
 brainrot3 = ExtResource("4_ov6f7")
 brainrot4 = ExtResource("5_dhcle")
 brainrot5 = ExtResource("6_m1uc6")
+brainrot1_chance = 50
+brainrot2_chance = 20
+brainrot4_chance = 10
+brainrot5_chance = 5
 
 [node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833 node_paths=PackedStringArray("egg_parent")]
 unique_name_in_owner = true
