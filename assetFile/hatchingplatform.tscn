@@ -25,3 +25,7 @@ gizmo_extents = 1.0
 
 [node name="HatchPoint" type="Marker3D" parent="." unique_id=89103448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="HatchTimer" type="Timer" parent="." unique_id=1960752606]
+
+[connection signal="timeout" from="HatchTimer" to="." method="_on_hatch_timer_timeout"]

@@ -25,9 +25,10 @@ brainrot3 = ExtResource("4_lfhfb")
 brainrot4 = ExtResource("5_n2qft")
 brainrot5 = ExtResource("6_0ufdh")
 
-[node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833]
+[node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833 node_paths=PackedStringArray("egg_parent")]
 unique_name_in_owner = true
 script = ExtResource("2_8qb1s")
+egg_parent = NodePath("..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
 mesh = SubResource("CapsuleMesh_mb28y")
@@ -35,13 +36,6 @@ mesh = SubResource("CapsuleMesh_mb28y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody" unique_id=375105250]
 shape = SubResource("CapsuleShape3D_7gxl2")
 
-[node name="HatchTimer" type="Timer" parent="EggBody" unique_id=339521243]
-wait_time = 3.0
-one_shot = true
-
 [node name="Area3D" type="Area3D" parent="EggBody" unique_id=1742043761]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EggBody/Area3D" unique_id=1336026866]
-
-[connection signal="timeout" from="EggBody/HatchTimer" to="." method="_on_hatch_timer_timeout"]
-[connection signal="timeout" from="EggBody/HatchTimer" to="EggBody" method="_on_hatch_timer_timeout"]
