@@ -6,6 +6,10 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_avgxc"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_e0785"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0785"]
+
 [node name="HatchingPlatform" type="Node3D" unique_id=1442503796]
 script = ExtResource("1_e0785")
 
@@ -27,5 +31,17 @@ gizmo_extents = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="HatchTimer" type="Timer" parent="." unique_id=1960752606]
+
+[node name="MoneyCollection" type="Node3D" parent="." unique_id=463610390]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MoneyCollection" unique_id=659377134]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.37, 0, 0.05, 1.5)
+mesh = SubResource("PlaneMesh_e0785")
+
+[node name="Area3D" type="Area3D" parent="MoneyCollection" unique_id=1706682016]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoneyCollection/Area3D" unique_id=1769260946]
+transform = Transform3D(1.14, 0, 0, 0, 0.05, 0, 0, 0, 0.785, 0, 0.05, 1.5)
+shape = SubResource("BoxShape3D_e0785")
 
 [connection signal="timeout" from="HatchTimer" to="." method="_on_hatch_timer_timeout"]
