@@ -1,5 +1,6 @@
 extends PathFollow3D
 var is_hatching = false
+@export var price := 5000
 @export var hatch_time := 13.0
 @onready var egg_body = %EggBody
 @export var speed := 2.0
