@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dh8gol4s83ugc"]
 
+[ext_resource type="Script" uid="uid://cdduem25vdujv" path="res://assetScript/brainrotScript/wave_cat_erpillar.gd" id="1_dooit"]
 [ext_resource type="Texture2D" uid="uid://b16wdxi8k3eoq" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Wave Cat-erpillar.png" id="1_xmud8"]
 
 [node name="WaveCat-erpillar" type="Node3D" unique_id=322714563]
+script = ExtResource("1_dooit")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
