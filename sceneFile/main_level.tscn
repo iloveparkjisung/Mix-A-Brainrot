@@ -26,6 +26,8 @@ reflected_light_source = 1
 [sub_resource type="BoxShape3D" id="BoxShape3D_dedje"]
 size = Vector3(2, 0.001, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_shl88"]
+
 [node name="mainLevel" type="Node3D" unique_id=1367555869]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=193417636]
@@ -65,3 +67,21 @@ shadow_blur = 5.0
 
 [node name="Player" parent="." unique_id=1853437809 instance=ExtResource("4_dedje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5840397, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=352064356]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=493237019]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 1, 0, 0, 20)
+shape = SubResource("BoxShape3D_shl88")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1035604374]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 1, 0, 0, -20)
+shape = SubResource("BoxShape3D_shl88")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1699270050]
+transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 40, 15, 0, 0)
+shape = SubResource("BoxShape3D_shl88")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=998629844]
+transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 40, -15, 0, 0)
+shape = SubResource("BoxShape3D_shl88")
