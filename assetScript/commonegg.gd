@@ -1,5 +1,6 @@
 extends PathFollow3D
 var is_hatching = false
+@export var hatch_time := 3.0
 @onready var egg_body = %EggBody
 @export var speed := 2.0
 @export var brainrot1: PackedScene
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 
 func choose_brainrot():
 	var roll = randi_range(1,100)
+	print(roll)
 	if roll <= brainrot1_chance:
 		return brainrot1
 	elif roll <= brainrot1_chance + brainrot2_chance:
@@ -45,13 +47,6 @@ func hatch():
 	new_brainrot.global_position = egg_body.global_position + Vector3(0,1,0)
 	print("removed")
 	
-	if egg_body.hatching_platform != null:
-		egg_body.hatching_platform.clear_egg()
-	
 	egg_body.queue_free()
 	queue_free()
 	
-
-
-func _on_hatch_timer_timeout() -> void:
-	hatch()
