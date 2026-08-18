@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://i2mkvarvyav4"]
 
 [ext_resource type="Script" uid="uid://cognab7aauv3b" path="res://assetScript/hatchingplatform.gd" id="1_e0785"]
+[ext_resource type="Script" uid="uid://c70uhqvmek6my" path="res://assetScript/money_collection.gd" id="2_pbkd6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gtcqn"]
 
@@ -33,6 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 [node name="HatchTimer" type="Timer" parent="." unique_id=1960752606]
 
 [node name="MoneyCollection" type="Node3D" parent="." unique_id=463610390]
+script = ExtResource("2_pbkd6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MoneyCollection" unique_id=659377134]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.37, 0, 0.05, 1.5)
@@ -45,3 +47,4 @@ transform = Transform3D(1.14, 0, 0, 0, 0.05, 0, 0, 0, 0.785, 0, 0.05, 1.5)
 shape = SubResource("BoxShape3D_e0785")
 
 [connection signal="timeout" from="HatchTimer" to="." method="_on_hatch_timer_timeout"]
+[connection signal="body_entered" from="MoneyCollection/Area3D" to="MoneyCollection" method="_on_area_3d_body_entered"]

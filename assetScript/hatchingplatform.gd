@@ -43,4 +43,9 @@ func _on_hatch_timer_timeout() -> void:
 	var egg_to_hatch = egg
 	egg = null
 	
+	var brainrot = egg_to_hatch.hatch()
+	
+	if brainrot:
+		$MoneyCollection.set_brainrot(brainrot)
+	
 	egg_to_hatch.hatch()
