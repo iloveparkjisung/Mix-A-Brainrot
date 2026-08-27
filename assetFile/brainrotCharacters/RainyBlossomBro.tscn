@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://6d0eftvwr6tt"]
 
 [ext_resource type="Texture2D" uid="uid://c0acudedy7un7" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Rainy Blossom Bro.png" id="1_qa71w"]
+[ext_resource type="Script" uid="uid://dygvr6qsuv3p1" path="res://assetScript/brainrotScript/rainy_blossom_bro.gd" id="1_tlyt0"]
 
 [node name="RainyBlossomBro" type="Node3D" unique_id=322714563]
+script = ExtResource("1_tlyt0")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

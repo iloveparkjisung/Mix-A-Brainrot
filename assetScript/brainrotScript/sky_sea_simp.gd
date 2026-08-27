@@ -1,5 +1,5 @@
 extends Node3D
-@export var money_per_second := 30.0
+@export var money_per_second := 10
 var stored_money := 0.0
 
 func _process(delta: float) -> void:

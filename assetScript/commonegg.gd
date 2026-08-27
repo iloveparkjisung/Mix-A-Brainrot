@@ -50,4 +50,4 @@ func hatch():
 	
 	egg_body.queue_free()
 	queue_free()
-	
+	return new_brainrot

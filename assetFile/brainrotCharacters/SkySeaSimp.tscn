@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://blaejdqantwfj"]
 
 [ext_resource type="Texture2D" uid="uid://qe0f64cmgq2j" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Sky-Sea Simp.png" id="1_0fabk"]
+[ext_resource type="Script" uid="uid://boex7jfpiiw73" path="res://assetScript/brainrotScript/sky_sea_simp.gd" id="1_qyfgf"]
 
 [node name="SkySeaSimp" type="Node3D" unique_id=322714563]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_qyfgf")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 texture = ExtResource("1_0fabk")
