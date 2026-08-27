@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://6jf30dcgiy4q"]
+
+[ext_resource type="Script" uid="uid://lu368ueyjryg" path="res://assetScript/money_popup.gd" id="1_n6t4s"]
+
+[node name="MoneyPopup" type="Node3D" unique_id=916425772]
+script = ExtResource("1_n6t4s")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=178487140]
+modulate = Color(0.34875777, 0.82762873, 0, 1)
+outline_modulate = Color(0.61128193, 0.39035386, 4.813075e-07, 1)
+text = "+$10"
