@@ -1,6 +1,7 @@
 extends Node
 var money := 500
 
+
 func can_afford(amount: int) -> bool:
 	return money >= amount
 
