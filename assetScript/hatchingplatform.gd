@@ -37,7 +37,6 @@ func start_hatching():
 
 func _on_hatch_timer_timeout() -> void:
 	if egg == null:
-		print("no more")
 		return
 	print("hatching", egg)
 	var egg_to_hatch = egg
@@ -45,7 +44,6 @@ func _on_hatch_timer_timeout() -> void:
 	
 	var brainrot = egg_to_hatch.hatch()
 	
-	if brainrot:
+	if brainrot != null:
 		$MoneyCollection.set_brainrot(brainrot)
 	
-	egg_to_hatch.hatch()

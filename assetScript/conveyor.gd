@@ -30,7 +30,6 @@ func spawn_loop():
 
 func spawn_egg():
 	var roll = randi_range(1,100)
-	print("Roll",roll)
 	var chosen_egg: PackedScene
 	
 	if roll <= common_chance:
@@ -43,8 +42,7 @@ func spawn_egg():
 		chosen_egg = epic_egg
 	elif roll <= common_chance + uncommon_chance + rare_chance + epic_chance + legendary_chance:
 		chosen_egg = legendary_egg
-	
-	print('Chosen Egg',chosen_egg)
+		
 	var egg = chosen_egg.instantiate()
 	path.add_child(egg)
 	egg.progress_ratio = 0.0
