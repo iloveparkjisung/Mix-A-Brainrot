@@ -6,4 +6,8 @@ func float_up():
 	
 	tween.set_parallel(true)
 	tween.tween_property(self, "position:y", position.y + 1.5, 1.0)
+	tween.tween_property(label, "modulate:a", 0.0, 1.0)
 	
+	await tween.finished
+	
+	queue_free()

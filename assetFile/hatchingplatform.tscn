@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://i2mkvarvyav4"]
 
 [ext_resource type="Script" uid="uid://cognab7aauv3b" path="res://assetScript/hatchingplatform.gd" id="1_e0785"]
+[ext_resource type="PackedScene" uid="uid://6jf30dcgiy4q" path="res://assetFile/money_popup.tscn" id="2_krf01"]
 [ext_resource type="Script" uid="uid://c70uhqvmek6my" path="res://assetScript/money_collection.gd" id="2_pbkd6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gtcqn"]
@@ -13,6 +14,7 @@
 
 [node name="HatchingPlatform" type="Node3D" unique_id=1442503796]
 script = ExtResource("1_e0785")
+money_popup_scene = ExtResource("2_krf01")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1133893445 groups=["hatching_platform"]]
 
