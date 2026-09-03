@@ -2,6 +2,9 @@ extends Node3D
 @export var money_per_second := 10
 var stored_money := 0.0
 var popup_timer := 0.0
+var hatching_platform = null
+func set_hatching_platform(platform):
+	hatching_platform = platform
 
 func _process(delta: float) -> void:
 	stored_money += money_per_second * delta
