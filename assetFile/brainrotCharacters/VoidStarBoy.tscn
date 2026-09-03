@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://barttpwokllqp"]
 
+[ext_resource type="Script" uid="uid://ddnuf7hcqj1yq" path="res://assetScript/brainrotScript/void_star_boy.gd" id="1_a532m"]
 [ext_resource type="Texture2D" uid="uid://6p7nuskhks6m" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Void Star Boy.png" id="1_re5nx"]
 
 [node name="VoidStarBoy" type="Node3D" unique_id=322714563]
+script = ExtResource("1_a532m")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

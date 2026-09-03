@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://d3xn2txuo4o4y" path="res://assetFile/base.tscn" id="2_1yw2o"]
 [ext_resource type="PackedScene" uid="uid://csyeuya4ogeov" path="res://assetFile/conveyor.tscn" id="3_48twx"]
 [ext_resource type="PackedScene" uid="uid://b1wtuk3owhbke" path="res://assetFile/player.tscn" id="4_dedje"]
-[ext_resource type="Script" uid="uid://tgu241pp0xnu" path="res://gameFile/money_label.gd" id="5_shl88"]
-[ext_resource type="FontFile" uid="uid://bjhxqkd2ttuj5" path="res://importFiles/super_bouncer/Super Bouncer.ttf" id="6_wssf7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_48twx"]
 sky_top_color = Color(7.893444e-06, 0.68014985, 0.89671224, 1)
@@ -29,11 +27,6 @@ reflected_light_source = 1
 size = Vector3(2, 0.001, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_shl88"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_bq2cu"]
-font = ExtResource("6_wssf7")
-font_size = 40
-shadow_size = 3
 
 [node name="mainLevel" type="Node3D" unique_id=1367555869]
 
@@ -92,28 +85,3 @@ shape = SubResource("BoxShape3D_shl88")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=998629844]
 transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 40, -15, 0, 0)
 shape = SubResource("BoxShape3D_shl88")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1165752632]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=92027733]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -250.0
-offset_top = -85.0
-offset_bottom = 215.0
-grow_horizontal = 0
-expand_mode = 1
-
-[node name="MoneyLabel" type="Label" parent="CanvasLayer/TextureRect" unique_id=1560343642]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -225.0
-offset_top = 125.0
-offset_right = -125.000015
-offset_bottom = 164.99965
-grow_horizontal = 0
-label_settings = SubResource("LabelSettings_bq2cu")
-script = ExtResource("5_shl88")

@@ -48,11 +48,3 @@ func _on_hatch_timer_timeout() -> void:
 	if brainrot != null:
 		$MoneyCollection.set_brainrot(brainrot)
 	
-func show_money_popup(amount):
-	if money_popup_scene == null:
-		return
-	var popup = money_popup_scene.instantiate()
-	add_child(popup)
-	popup.global_position = global_position + Vector3(0, 2, 0)
-	popup.get_node("Label3D").text = "+$" + str(amount)
-	popup.float_up()
