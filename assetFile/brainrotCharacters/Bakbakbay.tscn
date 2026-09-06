@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://hn8yrhyh2qfc"]
 
+[ext_resource type="Script" uid="uid://cnedv5dfkwrj" path="res://assetScript/brainrotScript/bakbakbay.gd" id="1_ctnir"]
 [ext_resource type="Texture2D" uid="uid://bwsdssvduwubx" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Bakbakbay.png" id="1_o6bfb"]
 
 [node name="Bakbakbay" type="Node3D" unique_id=322714563]
+script = ExtResource("1_ctnir")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bwbl0dm75sv1d"]
 
 [ext_resource type="Texture2D" uid="uid://beqlyjvsli7eg" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Balenyala.png" id="1_1se3g"]
+[ext_resource type="Script" uid="uid://cglnvphxn62f5" path="res://assetScript/brainrotScript/balenyala.gd" id="1_atfv6"]
 
 [node name="Balenyala" type="Node3D" unique_id=322714563]
+script = ExtResource("1_atfv6")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

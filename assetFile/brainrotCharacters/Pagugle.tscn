@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ox876iasj8wm"]
 
+[ext_resource type="Script" uid="uid://clw1j102nteif" path="res://assetScript/brainrotScript/pagugle.gd" id="1_idxgo"]
 [ext_resource type="Texture2D" uid="uid://duq5e2pc7nadt" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Pagugle.png" id="1_uqcrp"]
 
 [node name="Pagugle" type="Node3D" unique_id=322714563]
+script = ExtResource("1_idxgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

@@ -9,3 +9,7 @@ script = ExtResource("1_a532m")
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 texture = ExtResource("1_re5nx")
+
+[node name="MoneyTimer" type="Timer" parent="." unique_id=1685378303]
+
+[connection signal="timeout" from="MoneyTimer" to="." method="_on_money_timer_timeout"]

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://jpi50fsn0jf2"]
 
+[ext_resource type="Script" uid="uid://cjwst56dyvu41" path="res://assetScript/brainrotScript/tamaslothd.gd" id="1_kvtke"]
 [ext_resource type="Texture2D" uid="uid://cru8xyjkvueo6" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Tamaslothd.png" id="1_sx0u8"]
 
 [node name="Tamaslothd" type="Node3D" unique_id=322714563]
+script = ExtResource("1_kvtke")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

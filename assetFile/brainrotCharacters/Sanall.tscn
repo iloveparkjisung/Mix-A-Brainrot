@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d4etbn7dos8wg"]
 
 [ext_resource type="Texture2D" uid="uid://bg7sfneo8fc3c" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Sanall.png" id="1_it3js"]
+[ext_resource type="Script" uid="uid://bmw4qkvyolbl8" path="res://assetScript/brainrotScript/sanall.gd" id="1_kbhyi"]
 
 [node name="Sanall" type="Node3D" unique_id=322714563]
+script = ExtResource("1_kbhyi")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=415481356]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

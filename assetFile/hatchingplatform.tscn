@@ -48,5 +48,8 @@ mesh = SubResource("PlaneMesh_e0785")
 transform = Transform3D(1.14, 0, 0, 0, 0.05, 0, 0, 0, 0.785, 0, 0.05, 1.5)
 shape = SubResource("BoxShape3D_e0785")
 
+[node name="Label3D" type="Label3D" parent="MoneyCollection" unique_id=1302255673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+
 [connection signal="timeout" from="HatchTimer" to="." method="_on_hatch_timer_timeout"]
 [connection signal="body_entered" from="MoneyCollection/Area3D" to="MoneyCollection" method="_on_area_3d_body_entered"]
