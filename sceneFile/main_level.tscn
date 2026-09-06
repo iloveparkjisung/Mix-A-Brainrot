@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://d3xn2txuo4o4y" path="res://assetFile/base.tscn" id="2_1yw2o"]
 [ext_resource type="PackedScene" uid="uid://csyeuya4ogeov" path="res://assetFile/conveyor.tscn" id="3_48twx"]
 [ext_resource type="PackedScene" uid="uid://b1wtuk3owhbke" path="res://assetFile/player.tscn" id="4_dedje"]
+[ext_resource type="FontFile" uid="uid://bjhxqkd2ttuj5" path="res://importFiles/super_bouncer/Super Bouncer.ttf" id="5_shl88"]
+[ext_resource type="Script" uid="uid://tgu241pp0xnu" path="res://gameFile/money_label.gd" id="6_17drs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_48twx"]
 sky_top_color = Color(7.893444e-06, 0.68014985, 0.89671224, 1)
@@ -85,3 +87,22 @@ shape = SubResource("BoxShape3D_shl88")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=998629844]
 transform = Transform3D(1, 0, 0, 0, 40, 0, 0, 0, 40, -15, 0, 0)
 shape = SubResource("BoxShape3D_shl88")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1710727134]
+
+[node name="MoneyLabel" type="Label" parent="CanvasLayer" unique_id=240391816]
+clip_contents = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -321.0
+offset_top = 20.0
+offset_right = -21.0
+offset_bottom = 140.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("5_shl88")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 2
+autowrap_mode = 2
+autowrap_trim_flags = 0
+script = ExtResource("6_17drs")
