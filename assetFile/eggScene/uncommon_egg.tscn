@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgtplqgmjf1ya"]
 
-[ext_resource type="Script" uid="uid://b3s8x82bupbnu" path="res://assetFile/eggScene/uncommonegg.gd" id="1_kh6no"]
+[ext_resource type="Script" uid="uid://b3s8x82bupbnu" path="res://assetScript/eggScript/uncommonegg.gd" id="1_kh6no"]
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_c0mt2"]
 [ext_resource type="PackedScene" uid="uid://barttpwokllqp" path="res://assetFile/brainrotCharacters/VoidStarBoy.tscn" id="2_ucdxt"]
 [ext_resource type="PackedScene" uid="uid://bwbl0dm75sv1d" path="res://assetFile/brainrotCharacters/Balenyala.tscn" id="2_xg3ud"]

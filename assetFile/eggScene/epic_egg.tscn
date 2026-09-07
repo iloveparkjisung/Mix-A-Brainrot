@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dli83iq3yf266"]
 
-[ext_resource type="Script" uid="uid://baju0e10a7onx" path="res://assetScript/epicegg.gd" id="1_0m442"]
+[ext_resource type="Script" uid="uid://baju0e10a7onx" path="res://assetScript/eggScript/epicegg.gd" id="1_0m442"]
 [ext_resource type="PackedScene" uid="uid://jpi50fsn0jf2" path="res://assetFile/brainrotCharacters/Tamaslothd.tscn" id="2_ih1qc"]
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_oda0t"]
 [ext_resource type="PackedScene" uid="uid://bn6t8twy06oao" path="res://assetFile/brainrotCharacters/Kabayitbayo.tscn" id="3_5pkhw"]

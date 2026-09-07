@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcgum7dg6jmpb"]
 
-[ext_resource type="Script" uid="uid://du7h1dpcwuqxm" path="res://assetScript/legendaryegg.gd" id="1_noud2"]
+[ext_resource type="Script" uid="uid://du7h1dpcwuqxm" path="res://assetScript/eggScript/legendaryegg.gd" id="1_noud2"]
 [ext_resource type="PackedScene" uid="uid://ox876iasj8wm" path="res://assetFile/brainrotCharacters/Pagugle.tscn" id="2_8kwpu"]
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_yo7cr"]
 

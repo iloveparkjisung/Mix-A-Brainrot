@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c65bdj6h0yc5w"]
 
-[ext_resource type="Script" uid="uid://dt0ep2imsdng3" path="res://assetScript/rareegg.gd" id="1_aha71"]
+[ext_resource type="Script" uid="uid://dt0ep2imsdng3" path="res://assetScript/eggScript/rareegg.gd" id="1_aha71"]
 [ext_resource type="PackedScene" uid="uid://d4etbn7dos8wg" path="res://assetFile/brainrotCharacters/Sanall.tscn" id="2_0m7hs"]
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_pik7c"]
 [ext_resource type="PackedScene" uid="uid://hn8yrhyh2qfc" path="res://assetFile/brainrotCharacters/Bakbakbay.tscn" id="3_1yci5"]

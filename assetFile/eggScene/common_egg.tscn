@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://demlrywygh0vh"]
 
-[ext_resource type="Script" uid="uid://deocbwputnr1k" path="res://assetScript/commonegg.gd" id="1_hd0tp"]
+[ext_resource type="Script" uid="uid://deocbwputnr1k" path="res://assetScript/eggScript/commonegg.gd" id="1_hd0tp"]
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_8qb1s"]
 [ext_resource type="PackedScene" uid="uid://blaejdqantwfj" path="res://assetFile/brainrotCharacters/SkySeaSimp.tscn" id="2_xud4h"]
 [ext_resource type="PackedScene" uid="uid://6d0eftvwr6tt" path="res://assetFile/brainrotCharacters/RainyBlossomBro.tscn" id="3_0ufdh"]
