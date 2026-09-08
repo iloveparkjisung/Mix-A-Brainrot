@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1wtuk3owhbke"]
 
 [ext_resource type="Script" uid="uid://47wi5tbcveti" path="res://scriptFile/player.gd" id="1_xu46x"]
+[ext_resource type="PackedScene" uid="uid://b1woutwnedlef" path="res://sceneFile/interaction_ui.tscn" id="2_c4767"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60hby"]
 radius = 0.4
@@ -30,3 +31,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1240152817]
 mesh = SubResource("CapsuleMesh_60hby")
+
+[node name="InteractionUI" parent="." unique_id=731630167 instance=ExtResource("2_c4767")]

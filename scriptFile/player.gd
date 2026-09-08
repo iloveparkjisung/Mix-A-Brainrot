@@ -8,6 +8,10 @@ const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.003
 var held_object = null
 
+
+
+
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
