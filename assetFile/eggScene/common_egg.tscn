@@ -35,6 +35,13 @@ unique_name_in_owner = true
 script = ExtResource("2_8qb1s")
 egg_parent = NodePath("..")
 
+[node name="Label3D" type="Label3D" parent="EggBody" unique_id=235282647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+billboard = 1
+text = "Common Egg
+$500"
+font_size = 20
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
 mesh = SubResource("CapsuleMesh_mb28y")
 

@@ -37,6 +37,14 @@ unique_name_in_owner = true
 script = ExtResource("2_pik7c")
 egg_parent = NodePath("..")
 
+[node name="Label3D" type="Label3D" parent="EggBody" unique_id=327722356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+billboard = 1
+modulate = Color(0.3137255, 1, 1, 1)
+text = "Rare Egg
+$1,000"
+font_size = 20
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
 material_override = SubResource("StandardMaterial3D_jiljm")
 mesh = SubResource("CapsuleMesh_mb28y")

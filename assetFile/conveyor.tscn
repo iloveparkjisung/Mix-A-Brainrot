@@ -33,7 +33,9 @@ albedo_color = Color(0, 0, 0, 1)
 [node name="Conveyor" type="Node3D" unique_id=611286918]
 script = ExtResource("1_v14vx")
 common_egg = ExtResource("2_wpy7t")
+common_chance = 65
 uncommon_egg = ExtResource("3_xetxy")
+uncommon_chance = 20
 rare_egg = ExtResource("4_amr6o")
 epic_egg = ExtResource("5_jq1eu")
 legendary_egg = ExtResource("6_3ireq")

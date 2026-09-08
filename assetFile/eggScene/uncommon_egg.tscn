@@ -38,6 +38,14 @@ unique_name_in_owner = true
 script = ExtResource("2_c0mt2")
 egg_parent = NodePath("..")
 
+[node name="Label3D" type="Label3D" parent="EggBody" unique_id=992782099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+billboard = 1
+modulate = Color(0.22583649, 0.4648384, 0.37428698, 1)
+text = "Uncommon Egg
+$750"
+font_size = 20
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EggBody" unique_id=75147374]
 material_override = SubResource("StandardMaterial3D_jiljm")
 mesh = SubResource("CapsuleMesh_mb28y")
