@@ -13,7 +13,7 @@ var held_object = null
 @onready var action_label = $InteractionUI/Panel/ActionLabel
 @onready var progress_bar = $InteractionUI/Panel/ProgressBar
 var buy_progress := 0.0
-var buy_time := 1
+var buy_time := 0.5
 var current_target = null
 var buying_egg = null
 
@@ -72,26 +72,24 @@ func update_interaction_ui(delta: float) -> void:
 			buy_progress = 0.0
 			hide_interaction_ui()
 			return
-
-	if not Input.is_action_pressed("interact"):
-		buying_egg = null
-		buy_progress = 0.0
-		hide_interaction_ui()
-		return
-
-	action_label.text = "Hold [E] to Buy"
-	interaction_ui.visible = true
-	progress_bar.visible = true
-	buy_progress += delta
-	progress_bar.value = (buy_progress / buy_time) * 100.0
-
-	if buy_progress >= buy_time:
-		buying_egg.interact()
-		buying_egg = null
-		buy_progress = 0.0
-		progress_bar.value = 0.0
-
-	return
+			# E is being held
+		if Input.is_action_pressed("interact"):
+			action_label.text = "Hold [E] to Buy"
+			interaction_ui.visible = true
+			progress_bar.visible = true
+			buy_progress += delta
+			progress_bar.value = (buy_progress / buy_time) * 100.0 
+			# Finished buying
+			if buy_progress >= buy_time:
+				if is_instance_valid(buying_egg): 
+					buying_egg.interact()
+				buying_egg = null
+				buy_progress = 0.0
+				progress_bar.value = 0.0
+				buying_egg = null
+				buy_progress = 0.0
+				hide_interaction_ui()
+				return
 
 	if not ray.is_colliding():
 		hide_interaction_ui()
