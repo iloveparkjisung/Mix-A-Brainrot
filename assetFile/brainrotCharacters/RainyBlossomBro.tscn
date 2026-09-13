@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c0acudedy7un7" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Rainy Blossom Bro.png" id="1_qa71w"]
 [ext_resource type="Script" uid="uid://dygvr6qsuv3p1" path="res://assetScript/brainrotScript/rainy_blossom_bro.gd" id="1_tlyt0"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlyt0"]
+
 [node name="RainyBlossomBro" type="Node3D" unique_id=322714563]
 script = ExtResource("1_tlyt0")
 
@@ -10,3 +12,9 @@ script = ExtResource("1_tlyt0")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_qa71w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2044404592]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=93491623]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_tlyt0")

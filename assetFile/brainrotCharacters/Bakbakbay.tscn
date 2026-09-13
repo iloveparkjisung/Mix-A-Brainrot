@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cnedv5dfkwrj" path="res://assetScript/brainrotScript/bakbakbay.gd" id="1_ctnir"]
 [ext_resource type="Texture2D" uid="uid://bwsdssvduwubx" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Bakbakbay.png" id="1_o6bfb"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctnir"]
+
 [node name="Bakbakbay" type="Node3D" unique_id=322714563]
 script = ExtResource("1_ctnir")
 
@@ -10,3 +12,9 @@ script = ExtResource("1_ctnir")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_o6bfb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1083293415]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1698945148]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_ctnir")

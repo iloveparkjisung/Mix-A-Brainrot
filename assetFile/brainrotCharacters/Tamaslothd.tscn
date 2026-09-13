@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cjwst56dyvu41" path="res://assetScript/brainrotScript/tamaslothd.gd" id="1_kvtke"]
 [ext_resource type="Texture2D" uid="uid://cru8xyjkvueo6" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Tamaslothd.png" id="1_sx0u8"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kvtke"]
+
 [node name="Tamaslothd" type="Node3D" unique_id=322714563]
 script = ExtResource("1_kvtke")
 
@@ -10,3 +12,9 @@ script = ExtResource("1_kvtke")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_sx0u8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=550018497]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=605334867]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_kvtke")

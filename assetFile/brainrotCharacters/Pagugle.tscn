@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://clw1j102nteif" path="res://assetScript/brainrotScript/pagugle.gd" id="1_idxgo"]
 [ext_resource type="Texture2D" uid="uid://duq5e2pc7nadt" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Pagugle.png" id="1_uqcrp"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_idxgo"]
+
 [node name="Pagugle" type="Node3D" unique_id=322714563]
 script = ExtResource("1_idxgo")
 
@@ -10,3 +12,9 @@ script = ExtResource("1_idxgo")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_uqcrp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1812347509]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=304512962]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_idxgo")

@@ -139,7 +139,6 @@ func update_interaction_ui(delta: float) -> void:
 		return
 	hide_interaction_ui()
 
-
 func hide_interaction_ui() -> void:
 	interaction_ui.visible = false
 	buy_progress = 0.0

@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://beqlyjvsli7eg" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Balenyala.png" id="1_1se3g"]
 [ext_resource type="Script" uid="uid://cglnvphxn62f5" path="res://assetScript/brainrotScript/balenyala.gd" id="1_atfv6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_atfv6"]
+
 [node name="Balenyala" type="Node3D" unique_id=322714563]
 script = ExtResource("1_atfv6")
 
@@ -10,3 +12,9 @@ script = ExtResource("1_atfv6")
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_1se3g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=793768041]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=121464272]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_atfv6")
