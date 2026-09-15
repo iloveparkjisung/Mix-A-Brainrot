@@ -8,7 +8,7 @@ const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.003
 var held_object = null
 
-#for the interaction ui
+#for the interaction ui buying
 @onready var interaction_ui = $InteractionUI/Panel
 @onready var action_label = $InteractionUI/Panel/ActionLabel
 @onready var progress_bar = $InteractionUI/Panel/ProgressBar
@@ -16,6 +16,11 @@ var buy_progress := 0.0
 var buy_time := 0.5
 var current_target = null
 var buying_egg = null
+
+#selling
+var selling_brainrot = null
+var sell_progress := 0.0
+@export var sell_time := 2.0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -32,7 +37,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta: float) -> void:
 	update_interaction_ui(delta)
-	
+	update_selling(delta)
 	#gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -138,6 +143,51 @@ func update_interaction_ui(delta: float) -> void:
 
 		return
 	hide_interaction_ui()
+
+func sell_brainrot(brainrot) -> void:
+	if brainrot == null:
+		return
+	var price = brainrot.sell_price
+	GameManager.add_money(price)
+	print("sold", brainrot.name, "for", price)
+	if brainrot.hatching_platform != null:
+		var platform = brainrot.hatching_platform
+		platform.brainrot = null
+		platform.get_node("MoneyCollection").set_brainrot(null)
+	brainrot.queue_free()
+
+func update_selling(delta: float) -> void:
+	var target = $Camera3D/RayCast3D.get_collider()
+
+	if target == null:
+		selling_brainrot = null
+		sell_progress = 0.0
+		return
+
+	var brainrot = target.get_parent()
+
+	if brainrot == null:
+		return
+
+	if brainrot.get("sell_price") == null:
+		selling_brainrot = null
+		sell_progress = 0.0
+		return
+
+	if Input.is_key_pressed(KEY_X):
+		if selling_brainrot != brainrot:
+			selling_brainrot = brainrot
+			sell_progress = 0.0
+			print("Selling: ", brainrot.name)
+
+		sell_progress += delta
+
+		print("Sell progress: ", sell_progress)
+
+		if sell_progress >= sell_time:
+			sell_brainrot(brainrot)
+			selling_brainrot = null
+			sell_progress = 0.0
 
 func hide_interaction_ui() -> void:
 	interaction_ui.visible = false

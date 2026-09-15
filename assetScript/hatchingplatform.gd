@@ -2,7 +2,7 @@ extends Node3D
 @onready var egg_point = $EggPoint
 @onready var hatch_timer = $HatchTimer
 var egg = null
-
+var brainrot = null
 
 func place_egg(new_egg):
 	if is_instance_valid(egg):
@@ -40,8 +40,9 @@ func _on_hatch_timer_timeout() -> void:
 	var egg_to_hatch = egg
 	egg = null
 	
-	var brainrot = egg_to_hatch.hatch()
+	brainrot = egg_to_hatch.hatch()
 	
 	if brainrot != null:
+		brainrot.set_hatching_platform(self)
 		$MoneyCollection.set_brainrot(brainrot)
 	

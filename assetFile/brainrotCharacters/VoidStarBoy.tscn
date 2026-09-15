@@ -14,6 +14,7 @@ billboard = 1
 texture = ExtResource("1_re5nx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=818484363]
+collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1154937397]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0)
