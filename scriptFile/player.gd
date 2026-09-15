@@ -105,6 +105,12 @@ func update_interaction_ui(delta: float) -> void:
 	if object == null:
 		hide_interaction_ui()
 		return
+	
+	var brainrot= object.get_parent()
+	if brainrot != null and brainrot.get("sell_price") !=null:
+		action_label.text = "Hold [X] to Sell - $"+str(brainrot.sell_price)
+		interaction_ui.visible = true
+		progress_bar.visible = true
 
 	if held_object != null:
 
@@ -158,13 +164,16 @@ func sell_brainrot(brainrot) -> void:
 
 func update_selling(delta: float) -> void:
 	var target = $Camera3D/RayCast3D.get_collider()
-
-	if target == null:
+	var brainrot = null
+	if target != null:
+		brainrot = target.get_parent()
+		if brainrot.get("sell_price") == null:
+			brainrot = null
+	if brainrot == null:
 		selling_brainrot = null
 		sell_progress = 0.0
 		return
 
-	var brainrot = target.get_parent()
 
 	if brainrot == null:
 		return
@@ -173,7 +182,10 @@ func update_selling(delta: float) -> void:
 		selling_brainrot = null
 		sell_progress = 0.0
 		return
-
+	interaction_ui.visible = true
+	progress_bar.visible = true
+	action_label.text = "Hold [X] to Sell - $" +str(brainrot.sell_price)
+	
 	if Input.is_key_pressed(KEY_X):
 		if selling_brainrot != brainrot:
 			selling_brainrot = brainrot
@@ -181,14 +193,18 @@ func update_selling(delta: float) -> void:
 			print("Selling: ", brainrot.name)
 
 		sell_progress += delta
-
+		progress_bar.value = (sell_progress/sell_time) *100.0
 		print("Sell progress: ", sell_progress)
 
 		if sell_progress >= sell_time:
 			sell_brainrot(brainrot)
 			selling_brainrot = null
 			sell_progress = 0.0
-
+	else:
+		# X released
+		selling_brainrot = null
+		sell_progress = 0.0
+		progress_bar.value = 0
 func hide_interaction_ui() -> void:
 	interaction_ui.visible = false
 	buy_progress = 0.0
