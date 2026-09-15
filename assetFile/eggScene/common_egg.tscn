@@ -32,6 +32,7 @@ brainrot5_chance = 5
 
 [node name="EggBody" type="RigidBody3D" parent="." unique_id=1290035833 node_paths=PackedStringArray("egg_parent")]
 unique_name_in_owner = true
+collision_layer = 4
 script = ExtResource("2_8qb1s")
 egg_parent = NodePath("..")
 

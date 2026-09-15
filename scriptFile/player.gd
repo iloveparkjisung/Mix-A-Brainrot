@@ -205,6 +205,7 @@ func update_selling(delta: float) -> void:
 		selling_brainrot = null
 		sell_progress = 0.0
 		progress_bar.value = 0
+
 func hide_interaction_ui() -> void:
 	interaction_ui.visible = false
 	buy_progress = 0.0
