@@ -3,10 +3,17 @@
 [node name="InteractionUI" type="CanvasLayer" unique_id=731630167]
 
 [node name="Panel" type="Panel" parent="." unique_id=1380200003]
-offset_left = 500.0
-offset_top = 500.0
-offset_right = 800.0
-offset_bottom = 580.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.89100003
+anchor_right = 0.5
+anchor_bottom = 0.89100003
+offset_left = -150.00012
+offset_top = -47.52002
+offset_right = 150.00012
+offset_bottom = 47.47998
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="ActionLabel" type="Label" parent="Panel" unique_id=325071420]
 layout_mode = 0

@@ -8,7 +8,7 @@ func  set_brainrot(new_brainrot):
 func _ready() -> void:
 	await get_parent().child_entered_tree
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if brainrot == null:
 		money_label.text = "$0"
 		return

@@ -4,6 +4,25 @@ extends Node3D
 var egg = null
 var brainrot = null
 
+func remove_brainrot():
+	if brainrot == null:
+		return
+	
+	brainrot.hatching_platform = null
+	brainrot = null
+
+func place_brainrot(new_brainrot):
+	if brainrot != null:
+		return false
+	
+	brainrot = new_brainrot
+	brainrot.reparent($EggPoint)
+	brainrot.position = Vector3.ZERO
+	brainrot.rotation = Vector3.ZERO
+	
+	brainrot.place_on_platform(self)
+	return true
+
 func place_egg(new_egg):
 	if is_instance_valid(egg):
 		return false
