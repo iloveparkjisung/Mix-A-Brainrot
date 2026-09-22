@@ -6,7 +6,9 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.003
+#holding
 var held_object = null
+var holding_brainrot := false
 
 #for the interaction ui buying
 @onready var interaction_ui = $InteractionUI/Panel
@@ -96,6 +98,46 @@ func update_interaction_ui(delta: float) -> void:
 				buy_progress = 0.0
 				hide_interaction_ui()
 				return
+	
+	#place brainrot
+	if held_object != null:
+		var target = ray.get_collider()
+		if target == null:
+			hide_interaction_ui()
+			return
+		#brainrot
+		if holding_brainrot:
+			var platform = target
+			while platform != null and not platform.has_method("place_brainrot"):
+				platform = platform.get_parent()
+				
+			if platform != null and platform.brainrot == null:
+				action_label.text = "Press [E] to place Brainrot"
+				interaction_ui.visible = true
+				progress_bar.visible = false
+				return
+			hide_interaction_ui()
+			return
+		#egg
+		if not holding_brainrot:
+
+			var egg_platform = target
+			while egg_platform != null and not egg_platform.has_method("place_egg"):
+				egg_platform = egg_platform.get_parent()
+
+			if egg_platform != null and egg_platform.egg == null:
+				action_label.text = "Press [E] to Place Egg"
+				interaction_ui.visible = true
+				progress_bar.visible = false
+
+				if Input.is_action_just_pressed("interact"):
+					if egg_platform.place_egg(held_object):
+						held_object = null
+
+			return
+
+		hide_interaction_ui()
+		return
 
 	if not ray.is_colliding():
 		hide_interaction_ui()
@@ -164,8 +206,14 @@ func sell_brainrot(brainrot) -> void:
 	brainrot.queue_free()
 
 func update_selling(delta: float) -> void:
+	if held_object != null:
+		selling_brainrot = null
+		sell_progress = 0.0
+		return
+		
 	var target = $Camera3D/RayCast3D.get_collider()
 	var brainrot = null
+	
 	if target != null:
 		brainrot = target.get_parent()
 		if brainrot.get("sell_price") == null:
@@ -214,13 +262,15 @@ func hide_interaction_ui() -> void:
 
 func pick_up_brainrot(brainrot): #brainrot
 	held_object = brainrot
+	holding_brainrot = true
 	brainrot.pick_up()
-	brainrot.reparent($Camera3D/HoldPoint)
-	brainrot.postion = Vector3.ZERO
+	brainrot.reparent(hold_point)
+	brainrot.position = Vector3.ZERO
 	brainrot.rotation = Vector3.ZERO
+	print("Carrying Brainrot: ", brainrot.name)
 
 func get_brainrot_target():
-	var target = $Camera3d/RayCast3D.get_collider()
+	var target = $Camera3D/RayCast3D.get_collider()
 	
 	if target == null:
 		return null
@@ -244,9 +294,11 @@ func get_hatching_platform_target():
 	var target = $Camera3D/RayCast3D.get_collider()
 	if target == null:
 		return
-	var platform = target.get_parent()
-	if platform != null and platform.has_method("place_brainrot"):
-		return platform
+	var platform = target
+	while platform != null:
+		if platform.has_method("place_brainrot"):
+			return platform
+		platform = platform.get_parent()
 	return null
 
 func try_place_brainrot():
@@ -259,9 +311,11 @@ func try_place_brainrot():
 	
 	if platform.place_brainrot(held_object):
 		held_object =  null
-	
+		holding_brainrot = false
+
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
-		if held_object != null:
+		if holding_brainrot:
 			try_place_brainrot()
-		else:
+		elif held_object == null:
 			try_pick_up_brainrot()

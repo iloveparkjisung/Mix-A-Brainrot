@@ -7,7 +7,7 @@ var brainrot = null
 func remove_brainrot():
 	if brainrot == null:
 		return
-	
+	$MoneyCollection.set_brainrot(null)
 	brainrot.hatching_platform = null
 	brainrot = null
 
@@ -21,6 +21,7 @@ func place_brainrot(new_brainrot):
 	brainrot.rotation = Vector3.ZERO
 	
 	brainrot.place_on_platform(self)
+	$MoneyCollection.set_brainrot(new_brainrot)
 	return true
 
 func place_egg(new_egg):
@@ -64,4 +65,3 @@ func _on_hatch_timer_timeout() -> void:
 	if brainrot != null:
 		brainrot.set_hatching_platform(self)
 		$MoneyCollection.set_brainrot(brainrot)
-	
