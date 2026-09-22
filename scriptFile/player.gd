@@ -17,6 +17,7 @@ var buy_time := 0.5
 var current_target = null
 var buying_egg = null
 
+
 #selling
 var selling_brainrot = null
 var sell_progress := 0.0
@@ -57,7 +58,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func pick_up(object):
+func pick_up(object): #egg
 	if held_object != null:
 		return
 		
@@ -210,3 +211,57 @@ func hide_interaction_ui() -> void:
 	interaction_ui.visible = false
 	buy_progress = 0.0
 	progress_bar.value = 0.0
+
+func pick_up_brainrot(brainrot): #brainrot
+	held_object = brainrot
+	brainrot.pick_up()
+	brainrot.reparent($Camera3D/HoldPoint)
+	brainrot.postion = Vector3.ZERO
+	brainrot.rotation = Vector3.ZERO
+
+func get_brainrot_target():
+	var target = $Camera3d/RayCast3D.get_collider()
+	
+	if target == null:
+		return null
+	
+	var brainrot = target.get_parent()
+	
+	if brainrot != null and brainrot.has_method("pick_up"):
+		return brainrot
+	
+	return null
+
+func try_pick_up_brainrot():
+	if held_object != null:
+		return
+	var brainrot = get_brainrot_target()
+	if brainrot == null:
+		return
+	pick_up_brainrot(brainrot)
+
+func get_hatching_platform_target():
+	var target = $Camera3D/RayCast3D.get_collider()
+	if target == null:
+		return
+	var platform = target.get_parent()
+	if platform != null and platform.has_method("place_brainrot"):
+		return platform
+	return null
+
+func try_place_brainrot():
+	if held_object == null:
+		return
+	var platform = get_hatching_platform_target()
+	
+	if platform == null:
+		return
+	
+	if platform.place_brainrot(held_object):
+		held_object =  null
+	
+	if Input.is_action_just_pressed("interact"):
+		if held_object != null:
+			try_place_brainrot()
+		else:
+			try_pick_up_brainrot()
