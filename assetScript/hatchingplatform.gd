@@ -17,7 +17,7 @@ func place_brainrot(new_brainrot):
 	
 	brainrot = new_brainrot
 	brainrot.reparent($EggPoint)
-	brainrot.position = Vector3.ZERO
+	brainrot.position = Vector3(0,0.8,0)
 	brainrot.rotation = Vector3.ZERO
 	
 	brainrot.place_on_platform(self)

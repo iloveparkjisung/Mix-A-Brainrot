@@ -9,11 +9,12 @@ anchor_top = 0.89100003
 anchor_right = 0.5
 anchor_bottom = 0.89100003
 offset_left = -150.00012
-offset_top = -47.52002
+offset_top = -71.52002
 offset_right = 150.00012
 offset_bottom = 47.47998
 grow_horizontal = 2
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="ActionLabel" type="Label" parent="Panel" unique_id=325071420]
 layout_mode = 0
@@ -24,9 +25,18 @@ offset_bottom = 60.0
 text = "Hold [E] to Buy"
 horizontal_alignment = 1
 
+[node name="PickupLabel" type="Label" parent="Panel" unique_id=1417719564]
+layout_mode = 0
+offset_left = 20.000122
+offset_top = 45.0
+offset_right = 280.00012
+offset_bottom = 85.0
+text = "Press [E] to Pickup"
+horizontal_alignment = 1
+
 [node name="ProgressBar" type="ProgressBar" parent="Panel" unique_id=74803158]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 50.0
-offset_right = 280.0
-offset_bottom = 77.0
+offset_left = 20.000122
+offset_top = 74.0
+offset_right = 280.00012
+offset_bottom = 101.0

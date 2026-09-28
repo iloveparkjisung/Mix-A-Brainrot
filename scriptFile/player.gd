@@ -9,11 +9,13 @@ const MOUSE_SENSITIVITY = 0.003
 #holding
 var held_object = null
 var holding_brainrot := false
+var held_brainrot_visual_scale := Vector3.ONE
 
 #for the interaction ui buying
 @onready var interaction_ui = $InteractionUI/Panel
 @onready var action_label = $InteractionUI/Panel/ActionLabel
 @onready var progress_bar = $InteractionUI/Panel/ProgressBar
+@onready var pickup_label = $InteractionUI/Panel/PickupLabel
 var buy_progress := 0.0
 var buy_time := 0.5
 var current_target = null
@@ -154,6 +156,7 @@ func update_interaction_ui(delta: float) -> void:
 		action_label.text = "Hold [X] to Sell - $"+str(brainrot.sell_price)
 		interaction_ui.visible = true
 		progress_bar.visible = true
+		pickup_label.visible = false
 
 	if held_object != null:
 
@@ -166,6 +169,7 @@ func update_interaction_ui(delta: float) -> void:
 				action_label.text = "Press [E] to Place Egg"
 				interaction_ui.visible = true
 				progress_bar.visible = false
+				pickup_label.visible = false
 
 				if Input.is_action_just_pressed("interact"):
 					if platform.place_egg(held_object):
@@ -179,6 +183,7 @@ func update_interaction_ui(delta: float) -> void:
 		action_label.text = "Hold [E] to Buy"
 		interaction_ui.visible = true
 		progress_bar.visible = true
+		pickup_label.visible = false
 
 		if Input.is_action_pressed("interact"):
 			buying_egg = object
@@ -233,7 +238,9 @@ func update_selling(delta: float) -> void:
 		return
 	interaction_ui.visible = true
 	progress_bar.visible = true
+	pickup_label.visible = true
 	action_label.text = "Hold [X] to Sell - $" +str(brainrot.sell_price)
+	pickup_label.text = "Press [E] to Pick Up"
 	
 	if Input.is_key_pressed(KEY_X):
 		if selling_brainrot != brainrot:
@@ -263,10 +270,12 @@ func hide_interaction_ui() -> void:
 func pick_up_brainrot(brainrot): #brainrot
 	held_object = brainrot
 	holding_brainrot = true
+	held_brainrot_visual_scale = brainrot.get_node("Sprite3D").scale
 	brainrot.pick_up()
 	brainrot.reparent(hold_point)
 	brainrot.position = Vector3.ZERO
 	brainrot.rotation = Vector3.ZERO
+	brainrot.get_node("Sprite3D").scale = held_brainrot_visual_scale * 0.5
 	print("Carrying Brainrot: ", brainrot.name)
 
 func get_brainrot_target():
@@ -310,6 +319,7 @@ func try_place_brainrot():
 		return
 	
 	if platform.place_brainrot(held_object):
+		held_object.get_node("Sprite3D").scale = held_brainrot_visual_scale
 		held_object =  null
 		holding_brainrot = false
 
