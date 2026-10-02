@@ -268,6 +268,10 @@ func hide_interaction_ui() -> void:
 	progress_bar.value = 0.0
 
 func pick_up_brainrot(brainrot): #brainrot
+	var old_platform = brainrot.get_parent()
+	if old_platform != null and old_platform.is_in_group("mixing_platform"):
+		old_platform.remove_brainrot()
+
 	held_object = brainrot
 	holding_brainrot = true
 	held_brainrot_visual_scale = brainrot.get_node("Sprite3D").scale
@@ -275,21 +279,17 @@ func pick_up_brainrot(brainrot): #brainrot
 	brainrot.reparent(hold_point)
 	brainrot.position = Vector3.ZERO
 	brainrot.rotation = Vector3.ZERO
+
 	brainrot.get_node("Sprite3D").scale = held_brainrot_visual_scale * 0.5
 	print("Carrying Brainrot: ", brainrot.name)
 
 func get_brainrot_target():
 	var target = $Camera3D/RayCast3D.get_collider()
-	
+
 	if target == null:
 		return null
-	
-	var brainrot = target.get_parent()
-	
-	if brainrot != null and brainrot.has_method("pick_up"):
-		return brainrot
-	
-	return null
+
+	return find_brainrot_from_target(target)
 
 func try_pick_up_brainrot():
 	if held_object != null:
@@ -299,29 +299,46 @@ func try_pick_up_brainrot():
 		return
 	pick_up_brainrot(brainrot)
 
-func get_hatching_platform_target():
+func get_brainrot_place_target():
 	var target = $Camera3D/RayCast3D.get_collider()
+
 	if target == null:
-		return
+		return null
+
 	var platform = target
+
 	while platform != null:
-		if platform.has_method("place_brainrot"):
+		if platform.is_in_group("mixing_platform"):
 			return platform
+
+		if platform.is_in_group("hatching_platform"):
+			return platform
+
 		platform = platform.get_parent()
+
 	return null
 
 func try_place_brainrot():
 	if held_object == null:
 		return
-	var platform = get_hatching_platform_target()
-	
+
+	var platform = get_brainrot_place_target()
+
 	if platform == null:
+		print("No Brainrot placement target found")
 		return
-	
+
+	print("Trying to place Brainrot on: ", platform.name)
+
 	if platform.place_brainrot(held_object):
 		held_object.get_node("Sprite3D").scale = held_brainrot_visual_scale
-		held_object =  null
+
+		held_object = null
 		holding_brainrot = false
+
+		print("Brainrot placed successfully!")
+	else:
+		print("Could not place Brainrot - platform already has one")
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
@@ -329,3 +346,14 @@ func _process(_delta: float) -> void:
 			try_place_brainrot()
 		elif held_object == null:
 			try_pick_up_brainrot()
+
+func find_brainrot_from_target(target):
+	var node = target
+
+	while node != null:
+		if node.has_method("pick_up"):
+			return node
+
+		node = node.get_parent()
+
+	return null

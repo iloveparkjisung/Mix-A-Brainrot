@@ -48,6 +48,7 @@ shape = SubResource("CylinderShape3D_k8nxu")
 
 [node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform" unique_id=1629072454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+gizmo_extents = 1.0
 
 [node name="Platform2" type="StaticBody3D" parent="InputPatform" unique_id=906608012]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -64,6 +65,7 @@ shape = SubResource("CylinderShape3D_k8nxu")
 
 [node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform2" unique_id=1799774237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6226832e-07, 1, -3)
+gizmo_extents = 1.0
 
 [node name="ResultPlatform" type="StaticBody3D" parent="." unique_id=1045084983]
 

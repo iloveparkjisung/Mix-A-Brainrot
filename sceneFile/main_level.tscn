@@ -109,4 +109,4 @@ autowrap_trim_flags = 0
 script = ExtResource("6_17drs")
 
 [node name="MixingTable" parent="." unique_id=638508535 instance=ExtResource("7_wssf7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.45, -10)

@@ -2,16 +2,18 @@ extends StaticBody3D
 
 var brainrot = null
 
+func _ready():
+	add_to_group("mixing_platform")
+
 func place_brainrot(_new_brainrot):
 	if brainrot != null:
 		return false
 	brainrot = _new_brainrot
-	
+
 	_new_brainrot.get_parent().remove_child(_new_brainrot)
 	add_child(_new_brainrot)
 	_new_brainrot.position = $BrainrotPoint.position
 	_new_brainrot.rotation = Vector3.ZERO
-	
 	return true
 
 func remove_brainrot():
