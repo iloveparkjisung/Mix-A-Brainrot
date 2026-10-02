@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1wtuk3owhbke" path="res://assetFile/player.tscn" id="4_dedje"]
 [ext_resource type="FontFile" uid="uid://bjhxqkd2ttuj5" path="res://importFiles/super_bouncer/Super Bouncer.ttf" id="5_shl88"]
 [ext_resource type="Script" uid="uid://tgu241pp0xnu" path="res://gameFile/money_label.gd" id="6_17drs"]
+[ext_resource type="PackedScene" uid="uid://dqujyg21p2kb8" path="res://assetFile/mixing_table.tscn" id="7_wssf7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_48twx"]
 sky_top_color = Color(7.893444e-06, 0.68014985, 0.89671224, 1)
@@ -106,3 +107,6 @@ horizontal_alignment = 2
 autowrap_mode = 2
 autowrap_trim_flags = 0
 script = ExtResource("6_17drs")
+
+[node name="MixingTable" parent="." unique_id=638508535 instance=ExtResource("7_wssf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -10)

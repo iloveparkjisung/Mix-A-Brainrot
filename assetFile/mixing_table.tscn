@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dqujyg21p2kb8"]
 
 [ext_resource type="Material" uid="uid://b0abls33d4vny" path="res://materialFile/grey.tres" id="1_aj1et"]
+[ext_resource type="Script" uid="uid://ca677xc5dpldc" path="res://assetScript/mixing_table.gd" id="1_wq32m"]
 [ext_resource type="Material" uid="uid://u3jiq0m4eiai" path="res://materialFile/pinkmetalic.tres" id="2_hr2bi"]
+[ext_resource type="Script" uid="uid://brwha3ioh25ig" path="res://assetScript/mixing_platform.gd" id="2_wq32m"]
 [ext_resource type="Material" uid="uid://bydp52pe0rro3" path="res://materialFile/darkpinkmetalic.tres" id="3_wq32m"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fnbn5"]
@@ -17,6 +19,7 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2qcim"]
 
 [node name="MixingTable" type="Node3D" unique_id=638508535]
+script = ExtResource("1_wq32m")
 
 [node name="MixingArea" type="Area3D" parent="." unique_id=45349010]
 
@@ -31,77 +34,36 @@ shape = SubResource("BoxShape3D_hr2bi")
 
 [node name="InputPatform" type="Node3D" parent="." unique_id=736265122]
 
-[node name="Platform1" type="StaticBody3D" parent="InputPatform" unique_id=214332378]
+[node name="Platform" type="StaticBody3D" parent="InputPatform" unique_id=1260575794]
+script = ExtResource("2_wq32m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InputPatform/Platform1" unique_id=1852526601]
-transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, -3, -0.36, 0)
-material_override = ExtResource("2_hr2bi")
-mesh = SubResource("CylinderMesh_fnbn5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InputPatform/Platform1" unique_id=524425600]
-transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, -3, -0.3, 0)
-shape = SubResource("CylinderShape3D_k8nxu")
-
-[node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform1" unique_id=463255941]
-
-[node name="Label3D" type="Label3D" parent="InputPatform/Platform1" unique_id=206625610]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.3337605, 0)
-billboard = 1
-text = "[EMPTY]"
-
-[node name="Platform2" type="StaticBody3D" parent="InputPatform" unique_id=1260575794]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InputPatform/Platform2" unique_id=762668132]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InputPatform/Platform" unique_id=762668132]
 transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 0, -0.36, -3)
 material_override = ExtResource("2_hr2bi")
 mesh = SubResource("CylinderMesh_fnbn5")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="InputPatform/Platform2" unique_id=443981341]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InputPatform/Platform" unique_id=443981341]
 transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 0, -0.3, -3)
 shape = SubResource("CylinderShape3D_k8nxu")
 
-[node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform2" unique_id=1629072454]
+[node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform" unique_id=1629072454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
 
-[node name="Label3D" type="Label3D" parent="InputPatform/Platform2" unique_id=76761853]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3337605, -3)
-billboard = 1
-text = "[EMPTY]"
+[node name="Platform2" type="StaticBody3D" parent="InputPatform" unique_id=906608012]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_wq32m")
 
-[node name="Platform3" type="StaticBody3D" parent="InputPatform" unique_id=1133338497]
-
-[node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform3" unique_id=1647939424]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InputPatform/Platform3" unique_id=1294003356]
-transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 3, -0.36, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InputPatform/Platform2" unique_id=902782617]
+transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 0, -0.36, -3)
 material_override = ExtResource("2_hr2bi")
 mesh = SubResource("CylinderMesh_fnbn5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InputPatform/Platform3" unique_id=1459534831]
-transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 3, -0.3, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InputPatform/Platform2" unique_id=269519777]
+transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 0, -0.3, -3)
 shape = SubResource("CylinderShape3D_k8nxu")
 
-[node name="Label3D" type="Label3D" parent="InputPatform/Platform3" unique_id=1650282701]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.3337605, 0)
-billboard = 1
-text = "[EMPTY]"
-
-[node name="Platform4" type="StaticBody3D" parent="InputPatform" unique_id=1347003979]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InputPatform/Platform4" unique_id=217544917]
-transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 0, -0.36, 3)
-material_override = ExtResource("2_hr2bi")
-mesh = SubResource("CylinderMesh_fnbn5")
-
-[node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform4" unique_id=1159817173]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InputPatform/Platform4" unique_id=841092600]
-transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 0, -0.3, 3)
-shape = SubResource("CylinderShape3D_k8nxu")
-
-[node name="Label3D" type="Label3D" parent="InputPatform/Platform4" unique_id=412064647]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3337605, 3)
-billboard = 1
-text = "[EMPTY]"
+[node name="BrainrotPoint" type="Marker3D" parent="InputPatform/Platform2" unique_id=1799774237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6226832e-07, 1, -3)
 
 [node name="ResultPlatform" type="StaticBody3D" parent="." unique_id=1045084983]
 
@@ -114,7 +76,7 @@ mesh = SubResource("CylinderMesh_k8nxu")
 transform = Transform3D(2.5, 0, 0, 0, 0.5, 0, 0, 0, 2.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_2qcim")
 
-[node name="BrainrotPoint" type="Marker3D" parent="ResultPlatform" unique_id=174636442]
+[node name="BrainrotResultPoint" type="Marker3D" parent="ResultPlatform" unique_id=174636442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=391921278]
@@ -122,8 +84,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Panel" type="Panel" parent="UI" unique_id=2003193298]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MixButton" type="Button" parent="UI/Panel" unique_id=1295316509]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true

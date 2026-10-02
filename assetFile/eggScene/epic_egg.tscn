@@ -5,8 +5,26 @@
 [ext_resource type="Script" uid="uid://6qnof58ta5u" path="res://assetScript/eggbody.gd" id="2_oda0t"]
 [ext_resource type="PackedScene" uid="uid://bn6t8twy06oao" path="res://assetFile/brainrotCharacters/Kabayitbayo.tscn" id="3_5pkhw"]
 [ext_resource type="PackedScene" uid="uid://005ken4oe0c5" path="res://assetFile/brainrotCharacters/Champelaran.tscn" id="4_ov6f7"]
-[ext_resource type="PackedScene" uid="uid://c6vx8d3bouhy7" path="res://assetFile/brainrotCharacters/Walang_Cati.tscn" id="5_dhcle"]
+[ext_resource type="Script" uid="uid://cxbr5mt6smmib" path="res://assetScript/brainrotScript/walang_cati.gd" id="5_5pkhw"]
 [ext_resource type="PackedScene" uid="uid://ox876iasj8wm" path="res://assetFile/brainrotCharacters/Pagugle.tscn" id="6_m1uc6"]
+[ext_resource type="Texture2D" uid="uid://cdov838kdq4w1" path="res://assetFile/brainrotCharacters/brainrotCharacterPNG/Walang Cati.png" id="6_ov6f7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kkutc"]
+
+[sub_resource type="PackedScene" id="PackedScene_dhcle"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Walang Cati", "Node3D", "script", "Sprite3D", "Sprite3D", "transform", "billboard", "texture", "StaticBody3D", "StaticBody3D", "CollisionShape3D", "CollisionShape3D", "transform", "shape"),
+"node_count": 4,
+"node_ids": PackedInt32Array(322714563, 415481356, 1825028955, 1183242644),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./StaticBody3D")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 3, 5, 1, 6, 2, 7, 3, 0, 1073741825, 0, 9, 8, -1, 0, 0, 1073741826, 0, 11, 10, -1, 2, 12, 4, 13, 5, 0),
+"variants": [ExtResource("5_5pkhw"), Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0), 1, ExtResource("6_ov6f7"), Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 0, 0, 0), SubResource("BoxShape3D_kkutc")],
+"version": 3
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jiljm"]
 albedo_color = Color(0.82469916, 0.0006638193, 0.8475932, 1)
@@ -25,7 +43,7 @@ script = ExtResource("1_0m442")
 brainrot1 = ExtResource("2_ih1qc")
 brainrot2 = ExtResource("3_5pkhw")
 brainrot3 = ExtResource("4_ov6f7")
-brainrot4 = ExtResource("5_dhcle")
+brainrot4 = SubResource("PackedScene_dhcle")
 brainrot5 = ExtResource("6_m1uc6")
 brainrot1_chance = 50
 brainrot2_chance = 20
