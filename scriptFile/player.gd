@@ -109,15 +109,15 @@ func update_interaction_ui(delta: float) -> void:
 			return
 		#brainrot
 		if holding_brainrot:
-			var platform = target
-			while platform != null and not platform.has_method("place_brainrot"):
-				platform = platform.get_parent()
-				
+			var platform = get_brainrot_place_target()
+
 			if platform != null and platform.brainrot == null:
 				action_label.text = "Press [E] to place Brainrot"
 				interaction_ui.visible = true
 				progress_bar.visible = false
+				pickup_label.visible = false
 				return
+
 			hide_interaction_ui()
 			return
 		#egg
@@ -267,15 +267,21 @@ func hide_interaction_ui() -> void:
 	buy_progress = 0.0
 	progress_bar.value = 0.0
 
-func pick_up_brainrot(brainrot): #brainrot
+func pick_up_brainrot(brainrot):
+	if held_object != null:
+		return
 	var old_platform = brainrot.get_parent()
-	if old_platform != null and old_platform.is_in_group("mixing_platform"):
+	if old_platform != null and old_platform.has_method("remove_brainrot"):
 		old_platform.remove_brainrot()
-
 	held_object = brainrot
 	holding_brainrot = true
 	held_brainrot_visual_scale = brainrot.get_node("Sprite3D").scale
 	brainrot.pick_up()
+
+	var collision = brainrot.get_node_or_null("StaticBody3D/CollisionShape3D")
+	if collision != null:
+		collision.disabled = true
+
 	brainrot.reparent(hold_point)
 	brainrot.position = Vector3.ZERO
 	brainrot.rotation = Vector3.ZERO
@@ -304,14 +310,9 @@ func get_brainrot_place_target():
 
 	if target == null:
 		return null
-
 	var platform = target
-
 	while platform != null:
-		if platform.is_in_group("mixing_platform"):
-			return platform
-
-		if platform.is_in_group("hatching_platform"):
+		if platform.has_method("place_brainrot"):
 			return platform
 
 		platform = platform.get_parent()
@@ -328,17 +329,18 @@ func try_place_brainrot():
 		print("No Brainrot placement target found")
 		return
 
-	print("Trying to place Brainrot on: ", platform.name)
-
 	if platform.place_brainrot(held_object):
+
+		var collision = held_object.get_node_or_null("StaticBody3D/CollisionShape3D")
+		if collision != null:
+			collision.disabled = false
+
 		held_object.get_node("Sprite3D").scale = held_brainrot_visual_scale
 
 		held_object = null
 		holding_brainrot = false
 
 		print("Brainrot placed successfully!")
-	else:
-		print("Could not place Brainrot - platform already has one")
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
