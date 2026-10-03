@@ -1,4 +1,5 @@
 extends Node3D
+@export var brainrot_id := "SkySeaSimp"
 @export var money_per_second := 10
 @export var sell_price := 100
 var stored_money := 0.0

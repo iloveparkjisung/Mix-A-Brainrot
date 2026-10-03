@@ -1,5 +1,6 @@
 extends Node3D
-@export var money_per_second := 10	
+@export var money_per_second := 10
+@export var brainrot_id := "RainyBlossomBro"
 @export var sell_price := 100
 var stored_money := 0.0
 var hatching_platform = null

@@ -1,71 +1,155 @@
 extends Node3D
 
-@onready var platform1 = $InputPatform/Platform
-@onready var platform2 = $InputPatform/Platform2
-@onready var mix_button = $UI/Panel/MixButton
+@onready var platform1 = $InputPlatform/Platform
+@onready var platform2 = $InputPlatform/Platform2
+@onready var mix_button = $UI/Panel/MixLabel
+@onready var mix_progress_bar = $UI/Panel/ProgressBar
 
 var can_mix := false
 var current_recipe = null
-var recipes =[
+
+var mix_progress := 0.0
+@export var mix_time := 2.0
+
+var recipes = [
 	{
-		"ingredients": ["SkySeaSimp", "RainyBlossom"],
+		"ingredients": ["SkySeaSimp", "RainyBlossomBro"],
 		"result": "FlowStateGoblin",
 		"scene": "res://assetFile/brainrotCharacters/FlowStateGoblin.tscn"
 	}
 ]
+
 func _ready():
 	mix_button.visible = false
-	mix_button.pressed.connect(_on_mix_button_pressed)
+	mix_progress_bar.visible = false
+	mix_progress_bar.value = 0
 
-func _process(_delta):
+
+func _process(delta):
 	check_recipe()
-	
+	show_mix_ui()
+	if mix_button.visible and can_mix:
+		if Input.is_action_pressed("interact"):
+			mix_progress += delta
+			mix_button.text = "Mixing..."
+			mix_progress_bar.visible = true
+			mix_progress_bar.value = (mix_progress / mix_time) * 100.0
+			if mix_progress >= mix_time:
+				_on_mix_button_pressed()
+		else:
+			mix_progress = 0.0
+			mix_progress_bar.value = 0
+			mix_progress_bar.visible = false
+			mix_button.text = "Hold [E] to Mix"
+
+
 func check_recipe():
 	var brainrot1 = platform1.brainrot
 	var brainrot2 = platform2.brainrot
-	
+
 	if brainrot1 == null or brainrot2 == null:
 		can_mix = false
-		mix_button.visible = false
+		current_recipe = null
 		return
-	var _valid_recipe = false
-	
-	#making da recipe
+
+	var id1 = brainrot1.brainrot_id
+	var id2 = brainrot2.brainrot_id
+
+	print("MIX CHECK:")
+	print("Platform 1: ", id1)
+	print("Platform 2: ", id2)
+
 	for recipe in recipes:
 		var ingredients = recipe["ingredients"]
+
+		print("Recipe needs: ", ingredients[0], " + ", ingredients[1])
+
 		if (
-			(brainrot1.name == ingredients[0] and brainrot2.name == ingredients[1])
+			(id1 == ingredients[0] and id2 == ingredients[1])
 			or
-			(brainrot1.name == ingredients[1] and brainrot2.name == ingredients[0])
+			(id1 == ingredients[1] and id2 == ingredients[0])
 		):
-		
 			can_mix = true
 			current_recipe = recipe
-			mix_button.visible = true
+			print("RECIPE MATCH!")
 			return
 
+	can_mix = false
+	current_recipe = null
+	print("NO RECIPE MATCH")
+
+func show_mix_ui():
+	var player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		mix_button.visible = false
+		return
+	var ray = player.get_node("Camera3D/RayCast3D")
+
+	if ray == null or not ray.is_colliding():
+		mix_button.visible = false
+		return
+
+	var target = ray.get_collider()
+	var node = target
+
+	while node != null:
+		if node == self:
+			break
+		node = node.get_parent()
+	if node != self:
+		mix_button.visible = false
+		return
+	if platform1.brainrot == null or platform2.brainrot == null:
+		mix_button.visible = false
+		return
+	mix_button.visible = true
+	mix_progress_bar.visible = true
+	if can_mix:
+		mix_button.text = "Hold [E] to Mix"
+	else:
+		mix_button.text = "ERROR: Cannot Mix"
+		mix_progress_bar.visible = false
+
+
+func hide_mix_ui():
+
+	mix_button.visible = false
+	mix_progress = 0.0
+
+
 func _on_mix_button_pressed():
+
 	if not can_mix or current_recipe == null:
 		return
-	var _brainrot1 = platform1.remove_brainrot()
-	var _brainrot2 = platform2.remove_brainrot()
-	if _brainrot1 == null or _brainrot2 == null:
+
+	var brainrot1 = platform1.remove_brainrot()
+	var brainrot2 = platform2.remove_brainrot()
+
+	if brainrot1 == null or brainrot2 == null:
 		return
-	_brainrot1.queue_free()
-	_brainrot2.queue_free()
+
+	brainrot1.queue_free()
+	brainrot2.queue_free()
 
 	create_result(current_recipe)
 
 	can_mix = false
 	current_recipe = null
+	mix_progress = 0.0
 	mix_button.visible = false
 
+
 func create_result(recipe):
-	var _scene = load(recipe["scene"])
-	if _scene == null:
-		print ("could not load screen")
+
+	var scene = load(recipe["scene"])
+
+	if scene == null:
+		print("Could not load scene")
 		return
-	var new_brainrot = _scene.instantiate()
+
+	var new_brainrot = scene.instantiate()
+
 	$ResultPlatform.add_child(new_brainrot)
-	new_brainrot.position = $ResultPlatform/BrainrotPoint.position
+
+	new_brainrot.position = $ResultPlatform/BrainrotResultPoint.position
 	new_brainrot.rotation = Vector3.ZERO

@@ -343,11 +343,19 @@ func try_place_brainrot():
 		print("Brainrot placed successfully!")
 
 func _process(_delta: float) -> void:
+
 	if Input.is_action_just_pressed("interact"):
 		if holding_brainrot:
 			try_place_brainrot()
 		elif held_object == null:
 			try_pick_up_brainrot()
+	var mixing_table = get_mixing_table_target()
+
+	if mixing_table != null:
+		mixing_table.show_mix_ui()
+	else:
+		for table in get_tree().get_nodes_in_group("mixing_table"):
+			table.hide_mix_ui()
 
 func find_brainrot_from_target(target):
 	var node = target
@@ -358,4 +366,15 @@ func find_brainrot_from_target(target):
 
 		node = node.get_parent()
 
+	return null
+
+func get_mixing_table_target():
+	var target = $Camera3D/RayCast3D.get_collider()
+	if target == null:
+		return null
+	var node = target
+	while node != null:
+		if node.has_method("show_mix_ui"):
+			return node
+		node = node.get_parent()
 	return null
