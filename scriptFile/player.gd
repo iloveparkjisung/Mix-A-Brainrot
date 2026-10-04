@@ -76,6 +76,9 @@ func pick_up(object): #egg
 	object.position = Vector3.ZERO
 	object.rotation = Vector3.ZERO
 	print("Picked up:", object.name)
+	var tutorial = get_tree().get_first_node_in_group("tutorial")
+	if tutorial:
+		tutorial.egg_picked_up()
 
 func update_interaction_ui(delta: float) -> void:
 	if buying_egg != null:
@@ -95,6 +98,9 @@ func update_interaction_ui(delta: float) -> void:
 			if buy_progress >= buy_time:
 				if is_instance_valid(buying_egg): 
 					buying_egg.interact()
+					var tutorial = get_tree().get_first_node_in_group("tutorial")
+					if tutorial:
+						tutorial.egg_bought()
 				buying_egg = null
 				buy_progress = 0.0
 				progress_bar.value = 0.0
@@ -124,19 +130,19 @@ func update_interaction_ui(delta: float) -> void:
 			return
 		#egg
 		if not holding_brainrot:
-
 			var egg_platform = target
 			while egg_platform != null and not egg_platform.has_method("place_egg"):
 				egg_platform = egg_platform.get_parent()
-
 			if egg_platform != null and egg_platform.egg == null:
 				action_label.text = "Press [E] to Place Egg"
 				interaction_ui.visible = true
 				progress_bar.visible = false
-
 				if Input.is_action_just_pressed("interact"):
 					if egg_platform.place_egg(held_object):
 						held_object = null
+						var tutorial = get_tree().get_first_node_in_group("tutorial")
+						if tutorial:
+							tutorial.egg_placed()
 
 			return
 
@@ -193,6 +199,9 @@ func update_interaction_ui(delta: float) -> void:
 			progress_bar.value = (buy_progress / buy_time) * 100.0
 			if buy_progress >= buy_time:
 				buying_egg.interact()
+				var tutorial = get_tree().get_first_node_in_group("tutorial")
+				if tutorial:
+					tutorial.egg_bought()
 				buying_egg = null
 				buy_progress = 0.0
 				progress_bar.value = 0.0
@@ -347,6 +356,10 @@ func try_place_brainrot():
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("open_recipe_book"):
 		recipe_book.visible = !recipe_book.visible
+		if recipe_book.visible:
+			var tutorial = get_tree().get_first_node_in_group("tutorial")
+			if tutorial:
+				tutorial.recipe_book_opened()
 	if Input.is_action_just_pressed("interact"):
 		if holding_brainrot:
 			try_place_brainrot()

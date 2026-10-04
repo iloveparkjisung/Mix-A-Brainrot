@@ -65,3 +65,6 @@ func _on_hatch_timer_timeout() -> void:
 	if brainrot != null:
 		brainrot.set_hatching_platform(self)
 		$MoneyCollection.set_brainrot(brainrot)
+		var tutorial = get_tree().get_first_node_in_group("tutorial")
+		if tutorial:
+			tutorial.egg_hatched()

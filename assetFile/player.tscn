@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bjhxqkd2ttuj5" path="res://importFiles/super_bouncer/Super Bouncer.ttf" id="3_jt7in"]
 [ext_resource type="FontFile" uid="uid://bjonh3e0joaw7" path="res://importFiles/new_super_mario_font_u/New Super Mario Font U.ttf" id="4_ppiye"]
 [ext_resource type="Texture2D" uid="uid://gk1vv14sg7ic" path="res://importFiles/Book.png" id="5_r23ii"]
+[ext_resource type="Script" uid="uid://c0b6d154w4gcn" path="res://assetFile/tutorial.gd" id="6_6il81"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60hby"]
 radius = 0.4
@@ -140,3 +141,48 @@ offset_bottom = 80.0
 grow_vertical = 2
 texture = ExtResource("5_r23ii")
 expand_mode = 1
+
+[node name="TutorialUI" type="CanvasLayer" parent="." unique_id=2011604727]
+script = ExtResource("6_6il81")
+
+[node name="Panel" type="Panel" parent="TutorialUI" unique_id=1090199711]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -340.0
+offset_top = 24.0
+offset_right = 360.0
+offset_bottom = 224.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="TutorialUI/Panel" unique_id=285963420]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 26.0
+offset_right = 603.0001
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("3_jt7in")
+theme_override_font_sizes/font_size = 40
+text = "Wellcome to Mix a Brianrot!!"
+
+[node name="TutorialLabel" type="Label" parent="TutorialUI/Panel" unique_id=1876242618]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 71.0
+offset_right = 573.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("4_ppiye")
+theme_override_font_sizes/font_size = 25
+text = "Let's get your first Brainrot!
+First, you need to buy an egg."
+horizontal_alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="TutorialUI/Panel" unique_id=1971567328]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 156.0
+offset_right = 578.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("3_jt7in")
+theme_override_font_sizes/font_size = 30
+text = "Press [SPACE] to continue tutorial"
