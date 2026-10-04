@@ -8,8 +8,9 @@ var held := false
 func _process(delta: float) -> void:
 	if held:
 		return
+	if hatching_platform == null:
+		return
 	stored_money += money_per_second * delta
-	print(int(stored_money))
 
 func set_hatching_platform(platform) -> void:
 	hatching_platform = platform

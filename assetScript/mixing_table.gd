@@ -80,8 +80,10 @@ func check_recipe():
 	print("NO RECIPE MATCH")
 
 func show_mix_ui():
+	ui.visible = true
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
+		ui.visible = false
 		mix_button.visible = false
 		return
 	var ray = player.get_node("Camera3D/RayCast3D")
@@ -98,9 +100,11 @@ func show_mix_ui():
 			break
 		node = node.get_parent()
 	if node != self:
+		ui.visible = false
 		mix_button.visible = false
 		return
 	if platform1.brainrot == null or platform2.brainrot == null:
+		ui.visible = false
 		mix_button.visible = false
 		return
 	mix_button.visible = true
@@ -113,9 +117,11 @@ func show_mix_ui():
 
 
 func hide_mix_ui():
+	ui.visible = false
 	mix_button.visible = false
+	mix_progress_bar.visible = false
 	mix_progress = 0.0
-
+	mix_progress_bar.value = 0
 
 func _on_mix_button_pressed():
 
@@ -137,6 +143,10 @@ func _on_mix_button_pressed():
 	current_recipe = null
 	mix_progress = 0.0
 	mix_button.visible = false
+
+	var player = get_tree().get_first_node_in_group("player")
+	if player != null:
+		player.hide_interaction_ui()
 
 
 func create_result(recipe):

@@ -4,12 +4,12 @@ extends Node3D
 var stored_money := 0.0
 var hatching_platform = null
 var held := false
-
+@export var brainrot_id := "Bakbakbay"
 func _process(delta: float) -> void:
 	if held:
 		return
 	stored_money += money_per_second * delta
-	print(int(stored_money))
+
 
 func set_hatching_platform(platform) -> void:
 	hatching_platform = platform
