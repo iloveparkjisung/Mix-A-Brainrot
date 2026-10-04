@@ -10,7 +10,7 @@ var current_recipe = null
 
 var mix_progress := 0.0
 @export var mix_time := 2.0
-
+@onready var ui = $UI
 var recipes = [
 	{
 		"ingredients": ["SkySeaSimp", "RainyBlossomBro"],
@@ -23,11 +23,12 @@ func _ready():
 	mix_button.visible = false
 	mix_progress_bar.visible = false
 	mix_progress_bar.value = 0
+	ui.visible = false
+	add_to_group("mixing_table")
 
 
 func _process(delta):
 	check_recipe()
-	show_mix_ui()
 	if mix_button.visible and can_mix:
 		if Input.is_action_pressed("interact"):
 			mix_progress += delta
@@ -112,7 +113,6 @@ func show_mix_ui():
 
 
 func hide_mix_ui():
-
 	mix_button.visible = false
 	mix_progress = 0.0
 
