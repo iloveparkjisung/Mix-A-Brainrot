@@ -21,6 +21,8 @@ var buy_time := 0.5
 var current_target = null
 var buying_egg = null
 
+#recipebook
+@onready var recipe_book = $RecipeBookUI/Book
 
 #selling
 var selling_brainrot = null
@@ -343,7 +345,8 @@ func try_place_brainrot():
 		print("Brainrot placed successfully!")
 
 func _process(_delta: float) -> void:
-
+	if Input.is_action_just_pressed("open_recipe_book"):
+		recipe_book.visible = !recipe_book.visible
 	if Input.is_action_just_pressed("interact"):
 		if holding_brainrot:
 			try_place_brainrot()

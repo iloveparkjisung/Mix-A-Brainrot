@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://47wi5tbcveti" path="res://scriptFile/player.gd" id="1_xu46x"]
 [ext_resource type="PackedScene" uid="uid://b1woutwnedlef" path="res://sceneFile/interaction_ui.tscn" id="2_c4767"]
+[ext_resource type="FontFile" uid="uid://bjhxqkd2ttuj5" path="res://importFiles/super_bouncer/Super Bouncer.ttf" id="3_jt7in"]
+[ext_resource type="FontFile" uid="uid://bjonh3e0joaw7" path="res://importFiles/new_super_mario_font_u/New Super Mario Font U.ttf" id="4_ppiye"]
+[ext_resource type="Texture2D" uid="uid://gk1vv14sg7ic" path="res://importFiles/Book.png" id="5_r23ii"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60hby"]
 radius = 0.4
@@ -34,3 +37,106 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
 mesh = SubResource("CapsuleMesh_60hby")
 
 [node name="InteractionUI" parent="." unique_id=731630167 instance=ExtResource("2_c4767")]
+
+[node name="RecipeBookUI" type="CanvasLayer" parent="." unique_id=1420875542]
+
+[node name="Book" type="Panel" parent="RecipeBookUI" unique_id=739866367]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -310.0
+offset_right = 340.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="RecipeBookUI/Book" unique_id=1073211810]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 20.0
+offset_right = 472.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_jt7in")
+theme_override_font_sizes/font_size = 50
+text = "Recipe Book!"
+
+[node name="Recipe1" type="Label" parent="RecipeBookUI/Book" unique_id=703243839]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 80.0
+offset_right = 386.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("3_jt7in")
+theme_override_font_sizes/font_size = 24
+text = "Recipe 1"
+
+[node name="Recipe1Ingredients" type="Label" parent="RecipeBookUI/Book" unique_id=2063896222]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 110.0
+offset_right = 504.00012
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("4_ppiye")
+theme_override_font_sizes/font_size = 20
+text = "Sky Sea Simp + Rainy Blossom Bro"
+
+[node name="Recipe1Arrow" type="Label" parent="RecipeBookUI/Book" unique_id=1478127746]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 150.0
+offset_right = 370.0
+offset_bottom = 206.0
+theme_override_font_sizes/font_size = 40
+text = "↓"
+
+[node name="Recipe1Outcome" type="Label" parent="RecipeBookUI/Book" unique_id=2091960292]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 225.0
+offset_right = 490.0
+offset_bottom = 281.0
+theme_override_fonts/font = ExtResource("4_ppiye")
+theme_override_font_sizes/font_size = 35
+text = "Flow State Goblin"
+
+[node name="CloseHint" type="Label" parent="RecipeBookUI/Book" unique_id=2068352911]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 450.0
+offset_right = 476.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("3_jt7in")
+theme_override_font_sizes/font_size = 35
+text = "Press [R] to close"
+
+[node name="Player" type="CanvasLayer" parent="." unique_id=1648165557]
+
+[node name="Crosshair" type="Label" parent="Player" unique_id=989425388]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "."
+
+[node name="TextureRect" type="TextureRect" parent="Player" unique_id=2120683557]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 80.0
+grow_vertical = 2
+texture = ExtResource("5_r23ii")
+expand_mode = 1
