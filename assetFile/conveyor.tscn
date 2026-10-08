@@ -35,9 +35,7 @@ script = ExtResource("1_v14vx")
 common_egg = ExtResource("2_wpy7t")
 common_chance = 70
 uncommon_egg = ExtResource("3_xetxy")
-uncommon_chance = 20
 rare_egg = ExtResource("4_amr6o")
-rare_chance = 7
 epic_egg = ExtResource("5_jq1eu")
 epic_chance = 3
 legendary_egg = ExtResource("6_3ireq")
@@ -89,3 +87,5 @@ shape = SubResource("BoxShape3D_dojes")
 transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0.75, -19.75)
 material_override = ExtResource("4_dojes")
 mesh = SubResource("BoxMesh_n6es6")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2082638995]

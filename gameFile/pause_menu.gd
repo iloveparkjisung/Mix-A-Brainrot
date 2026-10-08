@@ -1,13 +1,15 @@
 extends CanvasLayer
 
 @onready var menu_panel = $MenuPanel
-@onready var settings_panel = $MenuPanel/SettingsPanel
+
 @onready var resume_button = $MenuPanel/ResumeButton
 @onready var settings_button = $MenuPanel/SettingsButton
 @onready var quit_button = $MenuPanel/QuitButton
-@onready var back_button = $MenuPanel/SettingsPanel/BackButton
-@onready var volume_slider = $MenuPanel/SettingsPanel/VolumeSlider
-@onready var volume_value = $MenuPanel/SettingsPanel/VolumeValue
+
+@onready var settings_panel = $SettingsPanel
+@onready var back_button = $SettingsPanel/BackButton
+@onready var volume_slider = $SettingsPanel/VolumeSlider
+@onready var volume_value = $SettingsPanel/VolumeValue
 
 const MUSIC_BUS_NAME = "Music"
 
@@ -57,17 +59,12 @@ func resume_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func open_settings():
-	menu_panel.show()
-	resume_button.hide()
-	settings_button.hide()
-	quit_button.hide()
+	menu_panel.hide()
 	settings_panel.show()
 
 func back_to_menu():
 	settings_panel.hide()
-	resume_button.show()
-	settings_button.show()
-	quit_button.show()
+	menu_panel.show()
 
 func change_music_volume(value: float):
 	volume_value.text = str(int(value)) + "%"
