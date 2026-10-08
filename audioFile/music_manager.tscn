@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ctr5s3l33fofs"]
+
+[ext_resource type="Script" uid="uid://bgmyoni8vedwd" path="res://audioFile/music_manager.gd" id="1_kxjyh"]
+[ext_resource type="AudioStream" uid="uid://bom60030d3upg" path="res://musicFile/cyberwave-orchestra-puzzle-game-loop-bright-casual-video-game-music-249201.mp3" id="1_ubcrb"]
+[ext_resource type="AudioStream" uid="uid://csls0orwuj207" path="res://musicFile/cyberwave-orchestra-upbeat-background-loop-casual-video-game-music-249200.mp3" id="2_kxjyh"]
+
+[node name="MusicManager" type="Node" unique_id=1950241654]
+script = ExtResource("1_kxjyh")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=580450923]
+stream = ExtResource("1_ubcrb")
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=1913074015]
+stream = ExtResource("2_kxjyh")
