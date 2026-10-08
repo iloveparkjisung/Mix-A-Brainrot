@@ -7,8 +7,13 @@
 [node name="MusicManager" type="Node" unique_id=1950241654]
 script = ExtResource("1_kxjyh")
 
-[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=580450923]
-stream = ExtResource("1_ubcrb")
-
 [node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=1913074015]
 stream = ExtResource("2_kxjyh")
+bus = &"Music"
+parameters/looping = true
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=580450923]
+stream = ExtResource("1_ubcrb")
+volume_db = -20.0
+bus = &"Music"
+parameters/looping = true
