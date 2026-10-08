@@ -50,7 +50,7 @@ func show_step(step: int):
 		6:
 			title_label.text = "STEP 6 — MIX A BRAINROT"
 			tutorial_label.text = "Have the right ingredients? Head to the Mixing Station and combine them!"
-			continue_label.text = "Take your ingredients to the Mixing Station."
+			continue_label.text = "Take your ingredients to the Mixing Station. [SPACE] to end tutorial"
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_accept"):

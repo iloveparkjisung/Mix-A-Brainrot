@@ -47,7 +47,7 @@ mesh = SubResource("PlaneMesh_1yw2o")
 shape = SubResource("BoxShape3D_dedje")
 
 [node name="Base" parent="." unique_id=1041749909 instance=ExtResource("2_1yw2o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.2, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.2, 10)
 
 [node name="Conveyor" parent="." unique_id=611286918 instance=ExtResource("3_48twx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)

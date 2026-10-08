@@ -142,6 +142,24 @@ grow_vertical = 2
 texture = ExtResource("5_r23ii")
 expand_mode = 1
 
+[node name="Intecract Logo" type="Label" parent="Player" unique_id=1599104996]
+offset_left = 22.0
+offset_right = 130.0
+offset_bottom = 23.0
+text = "[E] To Interact"
+
+[node name="Movement Logo" type="Label" parent="Player" unique_id=1083798114]
+offset_left = 152.0
+offset_right = 486.0
+offset_bottom = 23.0
+text = "[WASD] On Your Keyboard To Move Around"
+
+[node name="Jump Movement" type="Label" parent="Player" unique_id=114879810]
+offset_left = 512.0
+offset_right = 639.0
+offset_bottom = 23.0
+text = "[SPACE] To Jump"
+
 [node name="TutorialUI" type="CanvasLayer" parent="." unique_id=2011604727]
 script = ExtResource("6_6il81")
 
@@ -152,7 +170,7 @@ anchor_right = 0.5
 offset_left = -340.0
 offset_top = 24.0
 offset_right = 360.0
-offset_bottom = 224.0
+offset_bottom = 256.0
 grow_horizontal = 2
 
 [node name="TitleLabel" type="Label" parent="TutorialUI/Panel" unique_id=285963420]
@@ -166,23 +184,29 @@ theme_override_font_sizes/font_size = 40
 text = "Wellcome to Mix a Brianrot!!"
 
 [node name="TutorialLabel" type="Label" parent="TutorialUI/Panel" unique_id=1876242618]
-layout_mode = 0
-offset_left = 131.0
-offset_top = 71.0
-offset_right = 573.0
-offset_bottom = 144.0
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_ppiye")
 theme_override_font_sizes/font_size = 25
 text = "Let's get your first Brainrot!
 First, you need to buy an egg."
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="ContinueLabel" type="Label" parent="TutorialUI/Panel" unique_id=1971567328]
 layout_mode = 0
-offset_left = 131.0
+offset_left = 101.0
 offset_top = 156.0
-offset_right = 578.0
+offset_right = 603.0
 offset_bottom = 191.0
 theme_override_fonts/font = ExtResource("3_jt7in")
 theme_override_font_sizes/font_size = 30
 text = "Press [SPACE] to continue tutorial"
+horizontal_alignment = 1
+autowrap_mode = 2
