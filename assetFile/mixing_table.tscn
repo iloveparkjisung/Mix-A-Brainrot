@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ca677xc5dpldc" path="res://assetScript/mixing_table.gd" id="1_wq32m"]
 [ext_resource type="Material" uid="uid://u3jiq0m4eiai" path="res://materialFile/pinkmetalic.tres" id="2_hr2bi"]
 [ext_resource type="Script" uid="uid://brwha3ioh25ig" path="res://assetScript/mixing_platform.gd" id="2_wq32m"]
+[ext_resource type="FontFile" uid="uid://bjonh3e0joaw7" path="res://importFiles/new_super_mario_font_u/New Super Mario Font U.ttf" id="3_2qcim"]
 [ext_resource type="Material" uid="uid://bydp52pe0rro3" path="res://materialFile/darkpinkmetalic.tres" id="3_wq32m"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fnbn5"]
@@ -31,6 +32,14 @@ mesh = SubResource("PlaneMesh_fnbn5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MixingArea" unique_id=1688689999]
 transform = Transform3D(10, 0, 0, 0, 0.05, 0, 0, 0, 10, 0, -0.4, 0)
 shape = SubResource("BoxShape3D_hr2bi")
+
+[node name="Label3D" type="Label3D" parent="MixingArea" unique_id=262113963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+billboard = 1
+text = "MIXING TABLE"
+font = ExtResource("3_2qcim")
+font_size = 70
+uppercase = true
 
 [node name="InputPlatform" type="Node3D" parent="." unique_id=736265122]
 

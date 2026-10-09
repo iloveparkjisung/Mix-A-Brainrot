@@ -33,6 +33,12 @@ size = Vector3(2, 0.001, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_shl88"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woja8"]
+bg_color = Color(1, 0.30494812, 0.6337762, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulp1d"]
+bg_color = Color(0.25610346, 0.7141275, 0, 1)
+
 [node name="mainLevel" type="Node3D" unique_id=1367555869]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=193417636]
@@ -50,6 +56,14 @@ shape = SubResource("BoxShape3D_dedje")
 
 [node name="Base" parent="." unique_id=1041749909 instance=ExtResource("2_1yw2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -0.2, 10)
+
+[node name="Label3D" type="Label3D" parent="Base" unique_id=217337292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8500385, 0)
+billboard = 1
+text = "BASE
+[Hatching Platform]"
+font = ExtResource("8_bq2cu")
+font_size = 200
 
 [node name="Conveyor" parent="." unique_id=611286918 instance=ExtResource("3_48twx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
@@ -128,6 +142,7 @@ offset_right = 175.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_woja8")
 
 [node name="SettingsTitle" type="Label" parent="PauseMenu/SettingsPanel" unique_id=530517719]
 layout_mode = 1
@@ -214,6 +229,7 @@ offset_right = 175.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ulp1d")
 
 [node name="TitleLabel" type="Label" parent="PauseMenu/MenuPanel" unique_id=1028533055]
 layout_mode = 1
@@ -222,9 +238,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
+offset_left = -76.0
 offset_top = -200.0
-offset_right = 80.0
+offset_right = 83.0
 offset_bottom = -131.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -237,10 +253,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -55.0
-offset_top = 96.0
-offset_right = 69.0
-offset_bottom = 146.0
+offset_left = -61.0
+offset_top = 100.0
+offset_right = 63.0
+offset_bottom = 150.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("5_shl88")
 theme_override_font_sizes/font_size = 30
@@ -253,10 +269,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -55.0
-offset_top = -21.0
-offset_right = 69.0
-offset_bottom = 29.0
+offset_left = -61.0
+offset_top = -17.0
+offset_right = 63.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_shl88")
@@ -270,10 +286,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = 60.0
-offset_right = 94.0
-offset_bottom = 110.0
+offset_left = -76.0
+offset_top = 64.0
+offset_right = 88.0
+offset_bottom = 114.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_shl88")

@@ -15,6 +15,8 @@ height = 1.8
 radius = 0.4
 height = 1.8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibwyc"]
+
 [node name="Player" type="CharacterBody3D" unique_id=1853437809 groups=["player"]]
 script = ExtResource("1_xu46x")
 
@@ -43,73 +45,101 @@ mesh = SubResource("CapsuleMesh_60hby")
 
 [node name="Book" type="Panel" parent="RecipeBookUI" unique_id=739866367]
 visible = false
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -340.0
-offset_top = -310.0
+offset_top = -460.0
 offset_right = 340.0
-offset_bottom = 210.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ibwyc")
 
 [node name="Title" type="Label" parent="RecipeBookUI/Book" unique_id=1073211810]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 20.0
-offset_right = 472.0
-offset_bottom = 76.0
+offset_left = 210.0
+offset_top = 32.0
+offset_right = 482.0
+offset_bottom = 88.0
 theme_override_fonts/font = ExtResource("3_jt7in")
 theme_override_font_sizes/font_size = 50
 text = "Recipe Book!"
 
 [node name="Recipe1" type="Label" parent="RecipeBookUI/Book" unique_id=703243839]
-layout_mode = 0
-offset_left = 305.0
-offset_top = 80.0
-offset_right = 386.0
-offset_bottom = 107.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = -140.0
+offset_right = 51.5
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_jt7in")
 theme_override_font_sizes/font_size = 24
 text = "Recipe 1"
 
 [node name="Recipe1Ingredients" type="Label" parent="RecipeBookUI/Book" unique_id=2063896222]
-layout_mode = 0
-offset_left = 175.0
-offset_top = 110.0
-offset_right = 504.00012
-offset_bottom = 133.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -78.0
+offset_right = 175.00012
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_ppiye")
 theme_override_font_sizes/font_size = 20
 text = "Sky Sea Simp + Rainy Blossom Bro"
 
 [node name="Recipe1Arrow" type="Label" parent="RecipeBookUI/Book" unique_id=1478127746]
-layout_mode = 0
-offset_left = 330.0
-offset_top = 150.0
-offset_right = 370.0
-offset_bottom = 206.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -48.0
+offset_right = 30.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "↓"
 
 [node name="Recipe1Outcome" type="Label" parent="RecipeBookUI/Book" unique_id=2091960292]
-layout_mode = 0
-offset_left = 190.0
-offset_top = 225.0
-offset_right = 490.0
-offset_bottom = 281.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 12.0
+offset_right = 161.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_ppiye")
 theme_override_font_sizes/font_size = 35
 text = "Flow State Goblin"
 
 [node name="CloseHint" type="Label" parent="RecipeBookUI/Book" unique_id=2068352911]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 450.0
-offset_right = 476.0
-offset_bottom = 490.0
+offset_left = 212.0
+offset_top = 355.0
+offset_right = 478.0
+offset_bottom = 395.0
 theme_override_fonts/font = ExtResource("3_jt7in")
 theme_override_font_sizes/font_size = 35
 text = "Press [R] to close"
@@ -143,22 +173,35 @@ texture = ExtResource("5_r23ii")
 expand_mode = 1
 
 [node name="Intecract Logo" type="Label" parent="Player" unique_id=1599104996]
-offset_left = 22.0
-offset_right = 130.0
+offset_right = 152.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_ppiye")
+theme_override_font_sizes/font_size = 21
 text = "[E] To Interact"
 
 [node name="Movement Logo" type="Label" parent="Player" unique_id=1083798114]
-offset_left = 152.0
-offset_right = 486.0
+offset_left = 179.0
+offset_right = 619.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_ppiye")
+theme_override_font_sizes/font_size = 21
 text = "[WASD] On Your Keyboard To Move Around"
 
 [node name="Jump Movement" type="Label" parent="Player" unique_id=114879810]
-offset_left = 512.0
-offset_right = 639.0
+offset_left = 660.0
+offset_right = 840.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_ppiye")
+theme_override_font_sizes/font_size = 21
 text = "[SPACE] To Jump"
+
+[node name="Settings" type="Label" parent="Player" unique_id=1159286729]
+offset_left = 893.0
+offset_right = 1160.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_ppiye")
+theme_override_font_sizes/font_size = 21
+text = "[ESC] To Access Settings"
 
 [node name="TutorialUI" type="CanvasLayer" parent="." unique_id=2011604727]
 script = ExtResource("6_6il81")
@@ -167,17 +210,17 @@ script = ExtResource("6_6il81")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -340.0
-offset_top = 24.0
-offset_right = 360.0
-offset_bottom = 256.0
+offset_left = -325.0
+offset_top = 45.0
+offset_right = 325.0
+offset_bottom = 245.0
 grow_horizontal = 2
 
 [node name="TitleLabel" type="Label" parent="TutorialUI/Panel" unique_id=285963420]
 layout_mode = 0
-offset_left = 101.0
+offset_left = 79.0
 offset_top = 26.0
-offset_right = 603.0001
+offset_right = 581.0001
 offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("3_jt7in")
 theme_override_font_sizes/font_size = 40
@@ -201,10 +244,10 @@ autowrap_mode = 2
 
 [node name="ContinueLabel" type="Label" parent="TutorialUI/Panel" unique_id=1971567328]
 layout_mode = 0
-offset_left = 101.0
-offset_top = 156.0
-offset_right = 603.0
-offset_bottom = 191.0
+offset_left = 79.0
+offset_top = 146.0
+offset_right = 581.0
+offset_bottom = 181.0
 theme_override_fonts/font = ExtResource("3_jt7in")
 theme_override_font_sizes/font_size = 30
 text = "Press [SPACE] to continue tutorial"

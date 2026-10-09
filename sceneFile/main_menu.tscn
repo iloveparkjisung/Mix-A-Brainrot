@@ -6,8 +6,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12w02"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nctr8"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woja8"]
 
 [node name="MainMenu" type="Control" unique_id=1803834581]
@@ -66,17 +64,6 @@ theme_override_fonts/font = ExtResource("2_k5png")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_12w02")
 text = "play"
-
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1190000755]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.7778394, 0, 0.16658404, 1)
-theme_override_colors/font_hover_color = Color(0.94342095, 0.00026722194, 0.83311194, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_k5png")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nctr8")
-text = "settings"
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=565262939]
 layout_mode = 2
