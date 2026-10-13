@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bjhxqkd2ttuj5" path="res://importFiles/super_bouncer/Super Bouncer.ttf" id="3_jt7in"]
 [ext_resource type="FontFile" uid="uid://bjonh3e0joaw7" path="res://importFiles/new_super_mario_font_u/New Super Mario Font U.ttf" id="4_ppiye"]
 [ext_resource type="Texture2D" uid="uid://gk1vv14sg7ic" path="res://importFiles/Book.png" id="5_r23ii"]
-[ext_resource type="Script" uid="uid://c0b6d154w4gcn" path="res://assetFile/tutorial.gd" id="6_6il81"]
+[ext_resource type="Script" uid="uid://c0b6d154w4gcn" path="res://assetScript/tutorial.gd" id="6_6il81"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60hby"]
 radius = 0.4
