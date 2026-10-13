@@ -77,7 +77,7 @@ func egg_hatched():
 
 func money_collected():
 	if tutorial_steps == 4:
-		continue_label.text = "Press SPACE to continue"
+		continue_label.text = " SPACE to continue"
 
 func recipe_book_opened():
 	if tutorial_steps == 5:
@@ -85,4 +85,4 @@ func recipe_book_opened():
 
 func mixing_station_reached():
 	if tutorial_steps == 6:
-		continue_label.text = "Press SPACE to finish the tutorial"
+		continue_label.text = " SPACE to finish the tutorial"

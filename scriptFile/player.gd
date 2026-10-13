@@ -120,7 +120,7 @@ func update_interaction_ui(delta: float) -> void:
 			var platform = get_brainrot_place_target()
 
 			if platform != null and platform.brainrot == null:
-				action_label.text = "Press [E] to place Brainrot"
+				action_label.text = " [E] to place Brainrot"
 				interaction_ui.visible = true
 				progress_bar.visible = false
 				pickup_label.visible = false
@@ -134,7 +134,7 @@ func update_interaction_ui(delta: float) -> void:
 			while egg_platform != null and not egg_platform.has_method("place_egg"):
 				egg_platform = egg_platform.get_parent()
 			if egg_platform != null and egg_platform.egg == null:
-				action_label.text = "Press [E] to Place Egg"
+				action_label.text = " [E] to Place Egg"
 				interaction_ui.visible = true
 				progress_bar.visible = false
 				if Input.is_action_just_pressed("interact"):
@@ -174,7 +174,7 @@ func update_interaction_ui(delta: float) -> void:
 
 			if platform.egg == null:
 
-				action_label.text = "Press [E] to Place Egg"
+				action_label.text = " [E] to Place Egg"
 				interaction_ui.visible = true
 				progress_bar.visible = false
 				pickup_label.visible = false
@@ -251,7 +251,7 @@ func update_selling(delta: float) -> void:
 	progress_bar.visible = true
 	pickup_label.visible = true
 	action_label.text = "Hold [X] to Sell - $" +str(brainrot.sell_price)
-	pickup_label.text = "Press [E] to Pick Up"
+	pickup_label.text = " [E] to Pick Up"
 	
 	if Input.is_key_pressed(KEY_X):
 		if selling_brainrot != brainrot:
